@@ -20,6 +20,9 @@
     <link rel="apple-touch-icon" href="https://i.postimg.cc/FHNCZRbx/7C5085D4-2C87-4EE0-B89A-B5C6BBFADA74.jpg">
 
     <link rel="stylesheet" href="style.css">
+    
+    <!-- پەرتووکخانەیا خواندنا QR Code -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
 </head>
 <body>
 
@@ -84,6 +87,11 @@
                     <span class="error-msg" id="textErrorMsg">هیڤییە پێزانینان بنڤیسە!</span>
                 </div>
             </div>
+            
+            <!-- بەشێ QR Code -->
+            <div id="qrInputSection" style="display: none;">
+                <input type="file" id="qrFileInput" accept="image/*" style="display: none;">
+            </div>
         </div>
         
         <!-- دوگمەیا سەرەکی -->
@@ -100,6 +108,20 @@
         <div class="footer">
             <span id="devText">Divelopment by :</span> 
             <a href="https://bizhar-cloud.github.io/BizharRasheed/" target="_blank" class="rgb-text">Bizhar Rasheed</a>
+        </div>
+    </div>
+
+    <!-- پەنجەرەیا (Modal) بۆ دەرخستنا پێزانینێن QR -->
+    <div class="qr-modal-overlay" id="qrModal">
+        <div class="qr-modal-content">
+            <h3>زانیاریێن QR Code</h3>
+            <p id="qrType">جۆر: <span>لینک</span></p>
+            <div class="qr-data-box" id="qrData"></div>
+            <div class="qr-modal-actions">
+                <button id="btnCopyQr" class="modal-btn">کۆپی کرن</button>
+                <button id="btnOpenQr" class="modal-btn main-btn">ڤەکرن</button>
+                <button id="btnCloseQr" class="modal-btn cancel-btn">گرتن</button>
+            </div>
         </div>
     </div>
 
