@@ -181,3 +181,34 @@ p { color: var(--text-gray); font-size: 15px; margin: 0 0 25px 0; line-height: 1
     animation: rainbowAnim 5s linear infinite; font-weight: 900; text-decoration: none; font-size: 15px; margin: 0 5px;
 }
 @keyframes rainbowAnim { 0% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+/* دیزاینا پەنجەرەیا QR Code */
+.qr-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.qr-modal-overlay.active { opacity: 1; pointer-events: auto; }
+.qr-modal-content {
+    background: #fff; width: 90%; max-width: 400px; padding: 25px;
+    border-radius: 25px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(20px); transition: transform 0.3s;
+}
+.qr-modal-overlay.active .qr-modal-content { transform: translateY(0); }
+.qr-modal-content h3 { margin: 0 0 15px 0; color: var(--text-dark); font-weight: 900; }
+.qr-modal-content p { margin: 0 0 10px 0; color: var(--text-gray); font-size: 14px; font-weight: 700; }
+.qr-modal-content p span { color: var(--theme-main); }
+.qr-data-box {
+    background: var(--bg-color); padding: 15px; border-radius: 12px;
+    word-break: break-all; margin-bottom: 20px; font-weight: 700;
+    color: var(--text-dark); border: 1px solid #e5e7eb; text-align: left; direction: ltr;
+}
+.qr-modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.modal-btn {
+    flex: 1; padding: 12px; border: none; border-radius: 12px; cursor: pointer;
+    font-weight: 700; font-size: 15px; transition: 0.2s; min-width: 100px;
+}
+.modal-btn:hover { transform: translateY(-2px); }
+.modal-btn.main-btn { background: var(--theme-main); color: #fff; }
+.modal-btn.cancel-btn { background: #f3f4f6; color: var(--text-dark); }
