@@ -251,10 +251,12 @@ window.onload = () => {
     mainIconContainer.innerHTML = `<svg viewBox="0 0 24 24">${platformsData['whatsapp'].svg}</svg>`;
 };
 
-// --- تایبەتمەندییا QR Code ---
+// =========================================
+//   تایبەتمەندییا QR Code 
+// =========================================
 const qrFileInput = document.getElementById("qrFileInput");
 const qrModal = document.getElementById("qrModal");
-const qrType = document.querySelector("#qrType span");
+const qrType = document.getElementById("qrType");
 const qrData = document.getElementById("qrData");
 const btnOpenQr = document.getElementById("btnOpenQr");
 const btnCopyQr = document.getElementById("btnCopyQr");
@@ -289,23 +291,102 @@ qrFileInput.addEventListener("change", function(e) {
 
 function analyzeQrData(data) {
     currentQrResult = data;
-    qrData.innerText = data;
+    let displayHtml = "";
     
-    if(data.toLowerCase().startsWith("http://") || data.toLowerCase().startsWith("https://")) {
-        qrType.innerText = "لینک (URL)";
+    // 1. لینک (URL)
+    if (data.toLowerCase().startsWith("http://") || data.toLowerCase().startsWith("https://")) {
+        qrType.innerHTML = "جۆر: <span>لینک (URL)</span>";
+        displayHtml = `<a href="${data}" target="_blank" style="color: var(--theme-main); text-decoration: none; word-break: break-all;">${data}</a>`;
         btnOpenQr.style.display = "block";
+        btnOpenQr.innerText = "ڤەکرنا لینکێ";
         btnOpenQr.onclick = () => window.open(data, '_blank');
+        
+    // 2. وایفای (WiFi)
     } else if (data.toUpperCase().startsWith("WIFI:")) {
-        qrType.innerText = "تۆڕا وایفای (WiFi)";
+        qrType.innerHTML = "جۆر: <span>تۆڕا وایفای (WiFi)</span>";
         btnOpenQr.style.display = "none";
+        
         let ssid = data.match(/S:([^;]+)/);
         let pass = data.match(/P:([^;]+)/);
-        qrData.innerHTML = `<b>ناڤێ تۆڕێ:</b> ${ssid ? ssid[1] : 'نەدیار'}<br><br><b>پاسۆرد:</b> ${pass ? pass[1] : 'بێ پاسۆرد'}`;
+        let type = data.match(/T:([^;]+)/);
+        let hidden = data.match(/H:([^;]+)/) ? (data.match(/H:([^;]+)/)[1].toLowerCase() === 'true' ? "بەلێ" : "نەخێر") : "نەخێر";
+        
+        displayHtml = `
+            <b>ناڤێ تۆڕێ (SSID):</b> ${ssid ? ssid[1] : 'نەدیار'}<br><br>
+            <b>پاسۆرد:</b> ${pass ? pass[1] : 'بێ پاسۆرد'}<br><br>
+            <b>جۆرێ سیکیوریتی:</b> ${type ? type[1] : 'بێ پاراستن'}<br><br>
+            <b>تۆڕا ڤەشارتی:</b> ${hidden}
+        `;
+        
+    // 3. کۆنتاکت و ژمارا مۆبایلێ (vCard / meCard)
+    } else if (data.toUpperCase().startsWith("BEGIN:VCARD") || data.toUpperCase().startsWith("MECARD:")) {
+        qrType.innerHTML = "جۆر: <span>کۆنتاکت (ناسنامە)</span>";
+        
+        let name = data.match(/FN:([^;\n\r]+)/i) || data.match(/N:([^;\n\r]+)/i) || ["", "نەدیار"];
+        let phone = data.match(/TEL[^:]*:([^;\n\r]+)/i) || ["", "نەدیار"];
+        let email = data.match(/EMAIL[^:]*:([^;\n\r]+)/i) || ["", "نەدیار"];
+        
+        displayHtml = `
+            <b>ناڤ:</b> ${name[1].replace(/;/g, ' ')}<br><br>
+            <b>مۆبایل:</b> ${phone[1]}<br><br>
+            <b>ئیمێل:</b> ${email[1]}
+        `;
+        
+        btnOpenQr.style.display = "block";
+        btnOpenQr.innerText = "پاشکەوتکرن";
+        btnOpenQr.onclick = () => {
+            const blob = new Blob([data], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url; a.download = 'contact.vcf'; a.click();
+        };
+
+    // 4. جهـ و نەخشە (Geo Location)
+    } else if (data.toLowerCase().startsWith("geo:")) {
+        qrType.innerHTML = "جۆر: <span>جهـ (نەخشە)</span>";
+        let coords = data.substring(4).split('?')[0];
+        displayHtml = `<b>کۆردینات:</b> ${coords}`;
+        btnOpenQr.style.display = "block";
+        btnOpenQr.innerText = "ڤەکرن د نەخشەی دا";
+        btnOpenQr.onclick = () => window.open(`https://maps.google.com/?q=${coords}`, '_blank');
+
+    // 5. ئیمێل (Email)
+    } else if (data.toLowerCase().startsWith("mailto:") || data.toUpperCase().startsWith("MATMSG:")) {
+        qrType.innerHTML = "جۆر: <span>ئیمێل</span>";
+        let emailAddr = data.toLowerCase().startsWith("mailto:") ? data.substring(7).split('?')[0] : (data.match(/TO:([^;]+)/i) || ["",""])[1];
+        displayHtml = `<b>ئیمێل:</b> ${emailAddr}`;
+        btnOpenQr.style.display = "block";
+        btnOpenQr.innerText = "هنارتنا ئیمێلی";
+        btnOpenQr.onclick = () => window.open(data, '_self');
+
+    // 6. پەیوەندیکرن (Phone Call)
+    } else if (data.toLowerCase().startsWith("tel:")) {
+        qrType.innerHTML = "جۆر: <span>تەلەفۆن (پەیوەندی)</span>";
+        let phoneNum = data.substring(4);
+        displayHtml = `<b>ژمارە:</b> ${phoneNum}`;
+        btnOpenQr.style.display = "block";
+        btnOpenQr.innerText = "پەیوەندیکرن";
+        btnOpenQr.onclick = () => window.open(data, '_self');
+
+    // 7. کورتەنامە (SMS)
+    } else if (data.toLowerCase().startsWith("smsto:")) {
+        qrType.innerHTML = "جۆر: <span>کورتەنامە (SMS)</span>";
+        let parts = data.split(':');
+        let phoneNum = parts[1] || "نەدیار";
+        let msgBody = parts[2] || "";
+        displayHtml = `<b>بۆ ژمارە:</b> ${phoneNum}<br><br><b>نامە:</b> ${decodeURIComponent(msgBody)}`;
+        btnOpenQr.style.display = "block";
+        btnOpenQr.innerText = "هنارتنا نامێ";
+        btnOpenQr.onclick = () => window.open(data, '_self');
+
+    // 8. تێکستێ ئاسایی (Plain Text)
     } else {
-        qrType.innerText = "تێکست (دەق)";
+        qrType.innerHTML = "جۆر: <span>تێکست (دەق)</span>";
         btnOpenQr.style.display = "none";
+        displayHtml = data.replace(/\n/g, '<br>');
     }
     
+    qrData.innerHTML = displayHtml;
     qrModal.classList.add("active");
 }
 
