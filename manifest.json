@@ -1,6 +1,6 @@
 {
-  "name": "Social Media",
-  "short_name": "Social Media",
+  "name": "Contact Finder",
+  "short_name": "Contact Finder",
   "description": "پەیوەندیێ ب هەر کەسەکی بکە ل سەر هەمی پلاتفۆرمان ب دیزاینەکا پرۆفیشناڵ.",
   "start_url": "./index.html",
   "display": "standalone",
