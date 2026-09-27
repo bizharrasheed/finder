@@ -283,3 +283,4 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 .modal-btn:hover { transform: translateY(-2px); }
 .modal-btn.main-btn { background: var(--theme-main); color: #fff; }
 .modal-btn.cancel-btn { background: #f3f4f6; color: var(--text-dark); }
+
