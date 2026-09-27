@@ -1,4 +1,4 @@
-const CACHE_NAME = "social-media-v14"; 
+const CACHE_NAME = "social-media-v16"; 
 const assets = [
   "./",
   "./index.html",
@@ -40,4 +40,3 @@ self.addEventListener("fetch", fetchEvent => {
       })
   );
 });
-
