@@ -11,7 +11,7 @@
     <title>Social Media</title>
     
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#25D366" id="themeColorMeta">
+    <meta name="theme-color" content="#01533b" id="themeColorMeta">
     <meta name="mobile-web-app-capable" content="yes">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,79 +36,138 @@
     <div class="rain-container" id="rainContainer"></div>
 
     <div class="app-container">
-        <!-- خەتا سەری یا تەمام -->
-        <div class="top-bar" id="topBar"></div>
         
-        <!-- لیستا پلاتفۆرمان -->
-        <div class="platform-selector" id="platformSelector">
-            <!-- ب ڕێیا JS دێ هێنە دروستکرن -->
-        </div>
-
-        <!-- لۆگۆیا سەرەکی دگەل پەقیشکان و ڕووناهیا Pulse -->
-        <div class="logo-container">
-            <div class="logo-glow" id="logoGlow"></div>
-            <div class="logo-circle" id="mainLogoCircle">
-                <div class="bubbles-container" id="bubblesContainer"></div>
-                <div id="mainIconContainer"></div>
+        <!-- هێدەرێ سەری -->
+        <header class="app-header">
+            <div class="menu-icon">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
             </div>
-        </div>
+            <div class="header-brand">
+                <span class="brand-title">Contact <strong>Finder</strong></span>
+                <span class="brand-sub">Find Anyone • Fast & Easy</span>
+            </div>
+        </header>
 
-        <h1 id="mainTitle">واتسئاپ</h1>
-        <p id="mainDesc">ژمارێ بنڤیسە بێی سەیڤکرن، ڕاستەوخۆ دێ چات ڤەبیت.</p>
-        
-        <div class="form-container">
-            <!-- بەشێ ژمارا مۆبایلێ و کۆدێ وەلاتی -->
-            <div id="phoneInputSection">
-                <!-- ڕێزا ئێکێ: لیستا وەلاتان ب تەمامی -->
-                <div class="row">
-                    <div class="input-box select-box">
-                        <select id="countrySelect"></select>
-                    </div>
-                </div>
-                <!-- ڕێزا دووێ: ژمارا مۆبایلێ ل ڕاستێ و کۆد ل چەپێ -->
-                <div class="row">
-                    <div class="input-box phone-box" dir="ltr" id="phoneGroup">
-                        <input type="tel" id="phoneInput" placeholder="750 364 4666" autocomplete="off">
-                    </div>
-                    <div class="input-box code-box" dir="ltr">
-                        <span class="plus-sign" id="plusSign">+</span>
-                        <input type="tel" id="countryCodeInput" placeholder="964">
-                    </div>
-                    <span class="error-msg" id="phoneErrorMsg">هیڤییە ژمارەیەکا دروست بنڤیسە!</span>
+        <div class="content-wrapper">
+            <!-- لیستا پلاتفۆرمان -->
+            <div class="platforms-wrapper">
+                <div class="platform-selector" id="platformSelector">
+                    <!-- ب ڕێیا JS دێ هێنە دروستکرن -->
                 </div>
             </div>
 
-            <!-- بەشێ یوزەرنەیم -->
-            <div id="textInputSection" style="display: none;">
-                <div class="row">
-                    <div class="input-box phone-box" dir="ltr" id="textGroup">
-                        <input type="text" id="textInput" placeholder="username" autocomplete="off">
+            <!-- لۆگۆیا سەرەکی -->
+            <div class="hero-section">
+                <div class="logo-container">
+                    <div class="logo-glow" id="logoGlow"></div>
+                    <div class="logo-circle" id="mainLogoCircle">
+                        <div class="bubbles-container" id="bubblesContainer"></div>
+                        <div id="mainIconContainer"></div>
                     </div>
-                    <span class="error-msg" id="textErrorMsg">هیڤییە پێزانینان بنڤیسە!</span>
+                </div>
+
+                <h1 id="mainTitle">واتسئاپ</h1>
+                <p id="mainDesc">ژمارێ بنڤیسە بێی سەیڤکرن، ڕاستەوخۆ دێ چات ڤەبیت.</p>
+                
+                <!-- باجێ تایبەتمەندیان -->
+                <div class="feature-badge">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.08-.14L11.5 2h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></svg>
+                    بلەز • بهێز • بێبەرامبەر
                 </div>
             </div>
             
-            <!-- بەشێ QR Code -->
-            <div id="qrInputSection" style="display: none;">
-                <input type="file" id="qrFileInput" accept="image/*" style="display: none;">
-            </div>
-        </div>
-        
-        <!-- دوگمەیا سەرەکی -->
-        <button class="btn-submit" id="submitBtn">
-            <span id="btnText">ڤەکرنا چاتێ واتسئاپی</span>
-            <div id="btnIconWrapper">
-                <svg viewBox="0 0 24 24" id="btnIcon">
-                    <path id="sendIconPath" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                </svg>
-            </div>
-        </button>
+            <!-- کارتا فۆرمێ -->
+            <div class="main-action-card">
+                <div class="form-container">
+                    
+                    <!-- بەشێ ژمارا مۆبایلێ و کۆدێ وەلاتی -->
+                    <div id="phoneInputSection">
+                        
+                        <!-- لیستا گەڕانی وڵاتان (Custom Dropdown) -->
+                        <div class="custom-select-wrapper" id="customSelectWrapper">
+                            <div class="custom-select-btn" id="countrySelectBtn">
+                                <div class="selected-country-info">
+                                    <span id="selectedFlag">🇮🇶</span>
+                                    <span id="selectedName">(+964) عێراق - Iraq</span>
+                                </div>
+                                <svg viewBox="0 0 24 24" width="22" height="22" fill="#9ca3af"><path d="M7 10l5 5 5-5z"/></svg>
+                            </div>
+                            <div class="custom-select-dropdown" id="countryDropdown">
+                                <div class="search-box">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="#9ca3af"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                    <input type="text" id="countrySearch" placeholder="ناڤێ وەڵاتی بنڤیسە (وەکی:Iraq,عێراق)..." autocomplete="off">
+                                </div>
+                                <ul class="country-list" id="countryList"></ul>
+                            </div>
+                        </div>
 
-        <!-- ناڤێ تە ب دیزاینا RGB -->
-        <div class="footer">
-            <span id="devText">Divelopment by :</span> 
-            <a href="https://bizhar-cloud.github.io/BizharRasheed/" target="_blank" class="rgb-text">Bizhar Rasheed</a>
+                        <!-- ڕێزا دووێ: کۆد ل چەپێ و ژمارە ل ڕاستێ -->
+                        <div class="row phone-input-row">
+                            <div class="input-box code-box" dir="ltr">
+                                <span class="plus-sign" id="plusSign">+</span>
+                                <input type="tel" id="countryCodeInput" placeholder="964">
+                            </div>
+                            <div class="input-box phone-box" dir="ltr" id="phoneGroup">
+                                <input type="tel" id="phoneInput" placeholder="750 364 4666" autocomplete="off">
+                            </div>
+                            <span class="error-msg" id="phoneErrorMsg">هیڤییە ژمارەیەکا دروست بنڤیسە!</span>
+                        </div>
+                    </div>
+
+                    <!-- بەشێ یوزەرنەیم -->
+                    <div id="textInputSection" style="display: none;">
+                        <div class="row">
+                            <div class="input-box phone-box" dir="ltr" id="textGroup">
+                                <input type="text" id="textInput" placeholder="username" autocomplete="off">
+                            </div>
+                            <span class="error-msg" id="textErrorMsg">هیڤییە پێزانینان بنڤیسە!</span>
+                        </div>
+                    </div>
+                    
+                    <!-- بەشێ QR Code -->
+                    <div id="qrInputSection" style="display: none;">
+                        <input type="file" id="qrFileInput" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                
+                <!-- دوگمەیا سەرەکی -->
+                <button class="btn-submit" id="submitBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white" style="margin-right: 10px;"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    <span id="btnText" style="flex:1;">ڤەکرنا چاتێ واتسئاپی</span>
+                    <div id="btnIconWrapper">
+                        <svg viewBox="0 0 24 24" id="btnIcon"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </div>
+                </button>
+            </div>
+
+            <!-- بەشێ خوارێ (تایبەتمەندی) -->
+            <div class="app-features">
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                    <span>ب پشتراستی</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <span>هەمی سۆشیال میدیا</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    <span>پاراستن</span>
+                </div>
+                <div class="feature-item">
+                    <svg viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.08-.14L11.5 2h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></svg>
+                    <span>لەزاتی</span>
+                </div>
+            </div>
         </div>
+
+        <!-- فوتەرێ سەوزێ خوارێ (ناڤێ تە بتنێ لینکە) -->
+        <footer class="app-footer">
+            <span>&lt;/&gt;</span> Developed by: 
+            <a href="https://bizhar-cloud.github.io/BizharRasheed/" target="_blank">
+                <strong>Bizhar Rasheed</strong>
+            </a>
+        </footer>
     </div>
 
     <!-- پەنجەرەیا (Modal) بۆ دەرخستنا پێزانینێن QR -->
@@ -137,4 +196,3 @@
     </script>
 </body>
 </html>
-
