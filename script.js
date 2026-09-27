@@ -340,9 +340,13 @@ submitBtn.addEventListener("click", executeAction);
 phoneInput.addEventListener("keypress", e => { if (e.key === "Enter") executeAction(); });
 textInput.addEventListener("keypress", e => { if (e.key === "Enter") executeAction(); });
 
+// گۆڕینی دەق و پێزانینەکان بەشێوەی ئۆتۆماتیکی لە کاتی یەکەم جار کردنەوەی بەرنامەکە
 window.onload = () => {
     setupPlatforms();
     renderCountryList(countries);
+    
+    // دابینکرنی کۆدێ ئۆتۆماتیکی یێ 964
+    countryCodeInput.value = "964"; 
     
     mainTitle.innerText = platformsData['whatsapp'].name;
     mainDesc.innerText = platformsData['whatsapp'].desc;
