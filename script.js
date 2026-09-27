@@ -1,52 +1,86 @@
-// لیستا تەمام یا وەلاتان
+// لیستا تەمام یا وەلاتان ب ناڤێ ئینگلیزی و کوردی
 const countries = [
-    { code: "964", name: "عێراق", flag: "🇮🇶" }, { code: "1", name: "ئەمریکا / کەنەدا", flag: "🇺🇸" },
-    { code: "44", name: "بەریتانیا", flag: "🇬🇧" }, { code: "90", name: "تورکیا", flag: "🇹🇷" },
-    { code: "98", name: "ئێران", flag: "🇮🇷" }, { code: "963", name: "سوریا", flag: "🇸🇾" },
-    { code: "966", name: "سعودیە", flag: "🇸🇦" }, { code: "971", name: "ئیمارات", flag: "🇦🇪" },
-    { code: "49", name: "ئەڵمانیا", flag: "🇩🇪" }, { code: "33", name: "فەڕەنسا", flag: "🇫🇷" },
-    { code: "46", name: "سوید", flag: "🇸🇪" }, { code: "31", name: "هۆڵەندا", flag: "🇳🇱" },
-    { code: "7", name: "ڕووسیا", flag: "🇷🇺" }, { code: "20", name: "میسر", flag: "🇪🇬" },
-    { code: "962", name: "ئوردن", flag: "🇯🇴" }, { code: "965", name: "کوەیت", flag: "🇰🇼" },
-    { code: "968", name: "عومان", flag: "🇴🇲" }, { code: "974", name: "قەتەر", flag: "🇶🇦" },
-    { code: "973", name: "بەحرەین", flag: "🇧🇭" }, { code: "961", name: "لوبنان", flag: "🇱🇧" },
-    { code: "970", name: "فەلەستین", flag: "🇵🇸" }, { code: "212", name: "مەغریب", flag: "🇲🇦" },
-    { code: "213", name: "جەزائیر", flag: "🇩🇿" }, { code: "216", name: "تونس", flag: "🇹🇳" },
-    { code: "218", name: "لیبیا", flag: "🇱🇾" }, { code: "249", name: "سۆدان", flag: "🇸🇩" },
-    { code: "252", name: "سۆماڵ", flag: "🇸🇴" }, { code: "93", name: "ئەفغانستان", flag: "🇦🇫" },
-    { code: "355", name: "ئەلبانیا", flag: "🇦🇱" }, { code: "54", name: "ئەرجەنتین", flag: "🇦🇷" },
-    { code: "61", name: "ئوسترالیا", flag: "🇦🇺" }, { code: "43", name: "نەمسا", flag: "🇦🇹" },
-    { code: "880", name: "بەنگلادیش", flag: "🇧🇩" }, { code: "32", name: "بەلجیکا", flag: "🇧🇪" },
-    { code: "55", name: "بەڕازیل", flag: "🇧🇷" }, { code: "359", name: "بولگاریا", flag: "🇧🇬" },
-    { code: "86", name: "چین", flag: "🇨🇳" }, { code: "57", name: "کۆڵۆمبیا", flag: "🇨🇴" },
-    { code: "385", name: "کرواتیا", flag: "🇭🇷" }, { code: "357", name: "قوبرس", flag: "🇨🇾" },
-    { code: "420", name: "چیك", flag: "🇨🇿" }, { code: "45", name: "دانیمارک", flag: "🇩🇰" },
-    { code: "358", name: "فینلاند", flag: "🇫🇮" }, { code: "30", name: "یۆنان", flag: "🇬🇷" },
-    { code: "36", name: "هەنگاریا", flag: "🇭🇺" }, { code: "91", name: "هندستان", flag: "🇮🇳" },
-    { code: "62", name: "ئەندەنوسیا", flag: "🇮🇩" }, { code: "353", name: "ئێرلەندا", flag: "🇮🇪" },
-    { code: "39", name: "ئیتالیا", flag: "🇮🇹" }, { code: "81", name: "ژاپۆن", flag: "🇯🇵" },
-    { code: "82", name: "کۆریای باشوور", flag: "🇰🇷" }, { code: "60", name: "مالیزیا", flag: "🇲🇾" },
-    { code: "52", name: "مەکسیک", flag: "🇲🇽" }, { code: "64", name: "نیوزلەندا", flag: "🇳🇿" },
-    { code: "47", name: "نەرویج", flag: "🇳🇴" }, { code: "92", name: "پاکستان", flag: "🇵🇰" },
-    { code: "63", name: "فلیپین", flag: "🇵🇭" }, { code: "48", name: "پۆڵەندا", flag: "🇵🇱" },
-    { code: "351", name: "پورتوگال", flag: "🇵🇹" }, { code: "40", name: "ڕۆمانیا", flag: "🇷🇴" },
-    { code: "27", name: "ئەفریقای باشوور", flag: "🇿🇦" }, { code: "34", name: "ئیسپانیا", flag: "🇪🇸" },
-    { code: "41", name: "سویسرا", flag: "🇨🇭" }, { code: "66", name: "تایلەند", flag: "🇹🇭" },
-    { code: "380", name: "ئۆکرانیا", flag: "🇺🇦" }, { code: "58", name: "ڤەنزوێلا", flag: "🇻🇪" },
-    { code: "84", name: "ڤێتنام", flag: "🇻🇳" }, { code: "263", name: "زیمبابۆی", flag: "🇿🇼" },
-    { code: "unknown", name: "وەلاتەکێ دی...", flag: "🌍" }
+    { code: "964", nameKu: "عێراق", nameEn: "Iraq", flag: "🇮🇶" },
+    { code: "1", nameKu: "ئەمریکا / کەنەدا", nameEn: "USA / Canada", flag: "🇺🇸" },
+    { code: "44", nameKu: "بەریتانیا", nameEn: "United Kingdom", flag: "🇬🇧" },
+    { code: "90", nameKu: "تورکیا", nameEn: "Turkey", flag: "🇹🇷" },
+    { code: "98", nameKu: "ئێران", nameEn: "Iran", flag: "🇮🇷" },
+    { code: "963", nameKu: "سوریا", nameEn: "Syria", flag: "🇸🇾" },
+    { code: "966", nameKu: "سعودیە", nameEn: "Saudi Arabia", flag: "🇸🇦" },
+    { code: "971", nameKu: "ئیمارات", nameEn: "UAE", flag: "🇦🇪" },
+    { code: "49", nameKu: "ئەڵمانیا", nameEn: "Germany", flag: "🇩🇪" },
+    { code: "33", nameKu: "فەڕەنسا", nameEn: "France", flag: "🇫🇷" },
+    { code: "46", nameKu: "سوید", nameEn: "Sweden", flag: "🇸🇪" },
+    { code: "31", nameKu: "هۆڵەندا", nameEn: "Netherlands", flag: "🇳🇱" },
+    { code: "7", nameKu: "ڕووسیا", nameEn: "Russia", flag: "🇷🇺" },
+    { code: "20", nameKu: "میسر", nameEn: "Egypt", flag: "🇪🇬" },
+    { code: "962", nameKu: "ئوردن", nameEn: "Jordan", flag: "🇯🇴" },
+    { code: "965", nameKu: "کوەیت", nameEn: "Kuwait", flag: "🇰🇼" },
+    { code: "968", nameKu: "عومان", nameEn: "Oman", flag: "🇴🇲" },
+    { code: "974", nameKu: "قەتەر", nameEn: "Qatar", flag: "🇶🇦" },
+    { code: "973", nameKu: "بەحرەین", nameEn: "Bahrain", flag: "🇧🇭" },
+    { code: "961", nameKu: "لوبنان", nameEn: "Lebanon", flag: "🇱🇧" },
+    { code: "970", nameKu: "فەلەستین", nameEn: "Palestine", flag: "🇵🇸" },
+    { code: "212", nameKu: "مەغریب", nameEn: "Morocco", flag: "🇲🇦" },
+    { code: "213", nameKu: "جەزائیر", nameEn: "Algeria", flag: "🇩🇿" },
+    { code: "216", nameKu: "تونس", nameEn: "Tunisia", flag: "🇹🇳" },
+    { code: "218", nameKu: "لیبیا", nameEn: "Libya", flag: "🇱🇾" },
+    { code: "249", nameKu: "سۆدان", nameEn: "Sudan", flag: "🇸🇩" },
+    { code: "252", nameKu: "سۆماڵ", nameEn: "Somalia", flag: "🇸🇴" },
+    { code: "93", nameKu: "ئەفغانستان", nameEn: "Afghanistan", flag: "🇦🇫" },
+    { code: "355", nameKu: "ئەلبانیا", nameEn: "Albania", flag: "🇦🇱" },
+    { code: "54", nameKu: "ئەرجەنتین", nameEn: "Argentina", flag: "🇦🇷" },
+    { code: "61", nameKu: "ئوسترالیا", nameEn: "Australia", flag: "🇦🇺" },
+    { code: "43", nameKu: "نەمسا", nameEn: "Austria", flag: "🇦🇹" },
+    { code: "880", nameKu: "بەنگلادیش", nameEn: "Bangladesh", flag: "🇧🇩" },
+    { code: "32", nameKu: "بەلجیکا", nameEn: "Belgium", flag: "🇧🇪" },
+    { code: "55", nameKu: "بەڕازیل", nameEn: "Brazil", flag: "🇧🇷" },
+    { code: "359", nameKu: "بولگاریا", nameEn: "Bulgaria", flag: "🇧🇬" },
+    { code: "86", nameKu: "چین", nameEn: "China", flag: "🇨🇳" },
+    { code: "57", nameKu: "کۆڵۆمبیا", nameEn: "Colombia", flag: "🇨🇴" },
+    { code: "385", nameKu: "کرواتیا", nameEn: "Croatia", flag: "🇭🇷" },
+    { code: "357", nameKu: "قوبرس", nameEn: "Cyprus", flag: "🇨🇾" },
+    { code: "420", nameKu: "چیك", nameEn: "Czechia", flag: "🇨🇿" },
+    { code: "45", nameKu: "دانیمارک", nameEn: "Denmark", flag: "🇩🇰" },
+    { code: "358", nameKu: "فینلاند", nameEn: "Finland", flag: "🇫🇮" },
+    { code: "30", nameKu: "یۆنان", nameEn: "Greece", flag: "🇬🇷" },
+    { code: "36", nameKu: "هەنگاریا", nameEn: "Hungary", flag: "🇭🇺" },
+    { code: "91", nameKu: "هندستان", nameEn: "India", flag: "🇮🇳" },
+    { code: "62", nameKu: "ئەندەنوسیا", nameEn: "Indonesia", flag: "🇮🇩" },
+    { code: "353", nameKu: "ئێرلەندا", nameEn: "Ireland", flag: "🇮🇪" },
+    { code: "39", nameKu: "ئیتالیا", nameEn: "Italy", flag: "🇮🇹" },
+    { code: "81", nameKu: "ژاپۆن", nameEn: "Japan", flag: "🇯🇵" },
+    { code: "82", nameKu: "کۆریای باشوور", nameEn: "South Korea", flag: "🇰🇷" },
+    { code: "60", nameKu: "مالیزیا", nameEn: "Malaysia", flag: "🇲🇾" },
+    { code: "52", nameKu: "مەکسیک", nameEn: "Mexico", flag: "🇲🇽" },
+    { code: "64", nameKu: "نیوزلەندا", nameEn: "New Zealand", flag: "🇳🇿" },
+    { code: "47", nameKu: "نەرویج", nameEn: "Norway", flag: "🇳🇴" },
+    { code: "92", nameKu: "پاکستان", nameEn: "Pakistan", flag: "🇵🇰" },
+    { code: "63", nameKu: "فلیپین", nameEn: "Philippines", flag: "🇵🇭" },
+    { code: "48", nameKu: "پۆڵەندا", nameEn: "Poland", flag: "🇵🇱" },
+    { code: "351", nameKu: "پورتوگال", nameEn: "Portugal", flag: "🇵🇹" },
+    { code: "40", nameKu: "ڕۆمانیا", nameEn: "Romania", flag: "🇷🇴" },
+    { code: "27", nameKu: "ئەفریقای باشوور", nameEn: "South Africa", flag: "🇿🇦" },
+    { code: "34", nameKu: "ئیسپانیا", nameEn: "Spain", flag: "🇪🇸" },
+    { code: "41", nameKu: "سویسرا", nameEn: "Switzerland", flag: "🇨🇭" },
+    { code: "66", nameKu: "تایلەند", nameEn: "Thailand", flag: "🇹🇭" },
+    { code: "380", nameKu: "ئۆکرانیا", nameEn: "Ukraine", flag: "🇺🇦" },
+    { code: "58", nameKu: "ڤەنزوێلا", nameEn: "Venezuela", flag: "🇻🇪" },
+    { code: "84", nameKu: "ڤێتنام", nameEn: "Vietnam", flag: "🇻🇳" },
+    { code: "263", nameKu: "زیمبابۆی", nameEn: "Zimbabwe", flag: "🇿🇼" },
+    { code: "unknown", nameKu: "وەلاتەکێ دی...", nameEn: "Other...", flag: "🌍" }
 ];
 
 const platformsData = {
-    whatsapp: { id: "whatsapp", name: "واتسئاپ", desc: "ژمارێ بنڤیسە بێی سەیڤکرن، ڕاستەوخۆ دێ چات ڤەبیت.", btnText: "ڤەکرنا چاتێ واتسئاپی", type: "phone", baseUrl: "https://api.whatsapp.com/send/?phone=", colors: { main: "#25D366", dark: "#128C7E", light: "rgba(37, 211, 102, 0.15)", shadow: "rgba(37, 211, 102, 0.4)" }, svg: '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>' },
-    viber: { id: "viber", name: "ڤایبەر", desc: "ژمارێ بنڤیسە بۆ زێدەکرنا ڕاستەوخۆ ل سەر ڤایبەری.", btnText: "ڤەکرنا چاتێ ڤایبەری", type: "phone", baseUrl: "viber://add?number=", colors: { main: "#7360f2", dark: "#5c4cd9", light: "rgba(115, 96, 242, 0.15)", shadow: "rgba(115, 96, 242, 0.4)" }, svg: '<path d="M21.5 15.2c-.9-1.2-2.4-1.5-3.4-.4l-1.5 1.1c-1.5-1.2-4.1-3.7-5.1-5.1l1.1-1.5c1.1-1 .9-2.5-.4-3.4C10.8 4.6 9.6 3.5 8.3 2.5c-1.2-1-2.6-.7-3.4.4l-1.7 2C2.1 6 1.7 7.7 2 9.4c1 4.8 4.2 9.8 8.5 12.5 2.2 1.3 4.7 1.9 7.1 1.4 1.6-.3 3-1.3 3.9-2.6l2-1.7c1-1.1 1.2-2.6 0-3.8-1-1.3-2.1-2.5-2.2-2.5z"/>' },
-    tiktok: { id: "tiktok", name: "تیکتۆک", desc: "یوزەرنەیمی بنڤیسە بێی هێمایا @.", btnText: "ڤەکرنا تیکتوکی", type: "text", baseUrl: "https://www.tiktok.com/@", colors: { main: "#000000", dark: "#25F4EE", light: "rgba(0, 0, 0, 0.1)", shadow: "rgba(0, 0, 0, 0.4)" }, svg: '<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.06c0 1.25-.26 2.52-.86 3.61-.95 1.75-2.65 3.03-4.63 3.42-1.99.39-4.1-.06-5.74-1.21-1.64-1.15-2.73-2.91-3.08-4.87-.36-1.95.03-4.04 1.15-5.69 1.11-1.65 2.85-2.74 4.81-3.13 1.95-.39 4.02.06 5.64 1.23.01-1.44.02-2.88.01-4.32-.97-.58-2.11-.9-3.25-.97-1.15-.06-2.31.1-3.37.52-1.07.41-2.02 1.09-2.72 1.97-.7.88-1.16 1.94-1.34 3.05-.18 1.11.01 2.27.49 3.29.49 1.01 1.23 1.86 2.14 2.45.92.59 2.03.9 3.14.97 1.11.06 2.25-.09 3.28-.51z"/>' },
-    telegram: { id: "telegram", name: "تێلگرام", desc: "یوزەرنەیمی بنڤیسە بۆ پەیوەندیێ.", btnText: "ڤەکرنا تێلگرامی", type: "text", baseUrl: "https://t.me/", colors: { main: "#0088cc", dark: "#006699", light: "rgba(0, 136, 204, 0.15)", shadow: "rgba(0, 136, 204, 0.4)" }, svg: '<path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 7.85l-1.95 9.17c-.15.65-.54.82-1.09.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.08 5.6-5.06c.25-.22-.05-.34-.38-.11l-6.93 4.36-2.98-.93c-.65-.2-.66-.65.14-.96l11.64-4.49c.54-.2 1.01.12.8.1z"/>' },
+    whatsapp: { id: "whatsapp", name: "واتسئاپ", desc: "ژمارێ بنڤیسە بێی سەیڤکرن، ڕاستەوخۆ دێ چات ڤەبیت.", btnText: "ڤەکرنا چاتێ واتسئاپی", type: "phone", baseUrl: "https://api.whatsapp.com/send/?phone=", colors: { main: "#00b15c", dark: "#027a56", light: "rgba(0, 177, 92, 0.15)", shadow: "rgba(0, 177, 92, 0.4)" }, svg: '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>' },
     facebook: { id: "facebook", name: "فەیسبووک", desc: "یوزەرنەیم یان ئایدیێ پرۆفایلی بنڤیسە.", btnText: "ڤەکرنا فەیسبوکی", type: "text", baseUrl: "https://www.facebook.com/", colors: { main: "#1877F2", dark: "#105cb8", light: "rgba(24, 119, 242, 0.15)", shadow: "rgba(24, 119, 242, 0.4)" }, svg: '<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>' },
-    snapchat: { id: "snapchat", name: "سناپچات", desc: "یوزەرنەیمی بنڤیسە بۆ زێدەکرنا کەسی.", btnText: "ڤەکرنا سناپ چاتی", type: "text", baseUrl: "https://www.snapchat.com/add/", colors: { main: "#FFFC00", dark: "#d4d100", light: "rgba(255, 252, 0, 0.2)", shadow: "rgba(212, 209, 0, 0.4)" }, svg: '<path d="M11.96 1.01c2.14 0 4.14.88 5.48 2.22 1.12 1.12 1.72 2.66 1.75 4.3.02 1.2-.21 2.45-.73 3.52-.16.32-.34.62-.57.88-.1.11-.19.16-.14.3.06.19.46.3.73.38 1.08.31 2.2.66 2.8 1.48.33.45.47 1.07.25 1.63-.22.56-.73.96-1.28 1.17-.61.23-1.33.34-1.92.57-.15.06-.21.13-.19.3.02.16.2.3.36.43 1.24 1.02 2.5 1.99 3.86 2.81.42.26.47.6.28.98-.17.34-.55.51-.96.53-1.29.08-2.61-.13-3.87-.45-1.15-.29-2.26-.74-3.35-1.13-.56-.2-1.07-.37-1.46-.37-.41 0-.91.17-1.46.37-1.1.39-2.2.84-3.35 1.13-1.26.32-2.58.53-3.87.45-.41-.02-.79-.19-.96-.53-.19-.38-.14-.72.28-.98 1.36-.82 2.62-1.79 3.86-2.81.16-.13.34-.27.36-.43.02-.17-.04-.24-.19-.3-.59-.23-1.31-.34-1.92-.57-.55-.21-1.06-.61-1.28-1.17-.22-.56-.08-1.18.25-1.63.6-.82 1.72-1.17 2.8-1.48.27-.08.67-.19.73-.38.05-.14-.04-.19-.14-.3-.23-.26-.41-.56-.57-.88-.52-1.07-.75-2.32-.73-3.52.03-1.64.63-3.18 1.75-4.3C7.82 1.89 9.82 1.01 11.96 1.01z"/>' },
     instagram: { id: "instagram", name: "ئینستگرام", desc: "یوزەرنەیمی بنڤیسە بۆ ڤەکرنا پرۆفایلێ ئینستگرامی.", btnText: "ڤەکرنا ئێنستگرامی", type: "text", baseUrl: "https://www.instagram.com/", colors: { main: "#E1306C", dark: "#F56040", light: "rgba(225, 48, 108, 0.15)", shadow: "rgba(225, 48, 108, 0.4)" }, svg: '<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>' },
-    twitter: { id: "twitter", name: "X (تویتەر)", desc: "یوزەرنەیمی بنڤیسە بۆ ڤەکرنا پرۆفایلی ل سەر X.", btnText: "ڤەکرنا تورا X (تویتەر)", type: "text", baseUrl: "https://twitter.com/", colors: { main: "#1DA1F2", dark: "#0c85d0", light: "rgba(29, 161, 242, 0.15)", shadow: "rgba(29, 161, 242, 0.4)" }, svg: '<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>' },
-    email: { id: "email", name: "ئیمێل", desc: "ناونیشانێ ئیمێلی بنڤیسە بۆ ناردنا نامەیەکێ.", btnText: "ڤەکرنا ئێمێلی", type: "email", baseUrl: "mailto:", colors: { main: "#EA4335", dark: "#c5221f", light: "rgba(234, 67, 53, 0.15)", shadow: "rgba(234, 67, 53, 0.4)" }, svg: '<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>' },
+    viber: { id: "viber", name: "ڤایبەر", desc: "ژمارێ بنڤیسە بۆ زێدەکرنا ڕاستەوخۆ ل سەر ڤایبەری.", btnText: "ڤەکرنا چاتێ ڤایبەری", type: "phone", baseUrl: "viber://add?number=", colors: { main: "#7360f2", dark: "#5c4cd9", light: "rgba(115, 96, 242, 0.15)", shadow: "rgba(115, 96, 242, 0.4)" }, svg: '<path d="M21.5 15.2c-.9-1.2-2.4-1.5-3.4-.4l-1.5 1.1c-1.5-1.2-4.1-3.7-5.1-5.1l1.1-1.5c1.1-1 .9-2.5-.4-3.4C10.8 4.6 9.6 3.5 8.3 2.5c-1.2-1-2.6-.7-3.4.4l-1.7 2C2.1 6 1.7 7.7 2 9.4c1 4.8 4.2 9.8 8.5 12.5 2.2 1.3 4.7 1.9 7.1 1.4 1.6-.3 3-1.3 3.9-2.6l2-1.7c1-1.1 1.2-2.6 0-3.8-1-1.3-2.1-2.5-2.2-2.5z"/>' },
+    telegram: { id: "telegram", name: "تێلگرام", desc: "یوزەرنەیمی بنڤیسە بۆ پەیوەندیێ.", btnText: "ڤەکرنا تێلگرامی", type: "text", baseUrl: "https://t.me/", colors: { main: "#0088cc", dark: "#006699", light: "rgba(0, 136, 204, 0.15)", shadow: "rgba(0, 136, 204, 0.4)" }, svg: '<path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 7.85l-1.95 9.17c-.15.65-.54.82-1.09.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.08 5.6-5.06c.25-.22-.05-.34-.38-.11l-6.93 4.36-2.98-.93c-.65-.2-.66-.65.14-.96l11.64-4.49c.54-.2 1.01.12.8.1z"/>' },
+    twitter: { id: "twitter", name: "X (تویتەر)", desc: "یوزەرنەیمی بنڤیسە بۆ ڤەکرنا پرۆفایلی ل سەر X.", btnText: "ڤەکرنا تورا X (تویتەر)", type: "text", baseUrl: "https://twitter.com/", colors: { main: "#000000", dark: "#1a202c", light: "rgba(0, 0, 0, 0.15)", shadow: "rgba(0, 0, 0, 0.4)" }, svg: '<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>' },
+    tiktok: { id: "tiktok", name: "تیکتۆک", desc: "یوزەرنەیمی بنڤیسە بێی هێمایا @.", btnText: "ڤەکرنا تیکتوکی", type: "text", baseUrl: "https://www.tiktok.com/@", colors: { main: "#000000", dark: "#25F4EE", light: "rgba(0, 0, 0, 0.1)", shadow: "rgba(0, 0, 0, 0.4)" }, svg: '<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.06c0 1.25-.26 2.52-.86 3.61-.95 1.75-2.65 3.03-4.63 3.42-1.99.39-4.1-.06-5.74-1.21-1.64-1.15-2.73-2.91-3.08-4.87-.36-1.95.03-4.04 1.15-5.69 1.11-1.65 2.85-2.74 4.81-3.13 1.95-.39 4.02.06 5.64 1.23.01-1.44.02-2.88.01-4.32-.97-.58-2.11-.9-3.25-.97-1.15-.06-2.31.1-3.37.52-1.07.41-2.02 1.09-2.72 1.97-.7.88-1.16 1.94-1.34 3.05-.18 1.11.01 2.27.49 3.29.49 1.01 1.23 1.86 2.14 2.45.92.59 2.03.9 3.14.97 1.11.06 2.25-.09 3.28-.51z"/>' },
+    snapchat: { id: "snapchat", name: "سناپچات", desc: "یوزەرنەیمی بنڤیسە بۆ زێدەکرنا کەسی.", btnText: "ڤەکرنا سناپ چاتی", type: "text", baseUrl: "https://www.snapchat.com/add/", colors: { main: "#FFFC00", dark: "#d4d100", light: "rgba(255, 252, 0, 0.2)", shadow: "rgba(212, 209, 0, 0.4)" }, svg: '<path d="M11.96 1.01c2.14 0 4.14.88 5.48 2.22 1.12 1.12 1.72 2.66 1.75 4.3.02 1.2-.21 2.45-.73 3.52-.16.32-.34.62-.57.88-.1.11-.19.16-.14.3.06.19.46.3.73.38 1.08.31 2.2.66 2.8 1.48.33.45.47 1.07.25 1.63-.22.56-.73.96-1.28 1.17-.61.23-1.33.34-1.92.57-.15.06-.21.13-.19.3.02.16.2.3.36.43 1.24 1.02 2.5 1.99 3.86 2.81.42.26.47.6.28.98-.17.34-.55.51-.96.53-1.29.08-2.61-.13-3.87-.45-1.15-.29-2.26-.74-3.35-1.13-.56-.2-1.07-.37-1.46-.37-.41 0-.91.17-1.46.37-1.1.39-2.2.84-3.35 1.13-1.26.32-2.58.53-3.87.45-.41-.02-.79-.19-.96-.53-.19-.38-.14-.72.28-.98 1.36-.82 2.62-1.79 3.86-2.81.16-.13.34-.27.36-.43.02-.17-.04-.24-.19-.3-.59-.23-1.31-.34-1.92-.57-.55-.21-1.06-.61-1.28-1.17-.22-.56-.08-1.18.25-1.63.6-.82 1.72-1.17 2.8-1.48.27-.08.67-.19.73-.38.05-.14-.04-.19-.14-.3-.23-.26-.41-.56-.57-.88-.52-1.07-.75-2.32-.73-3.52.03-1.64.63-3.18 1.75-4.3C7.82 1.89 9.82 1.01 11.96 1.01z"/>' },
+    email: { id: "email", name: "ئیمێل", desc: "ئیمێلی بنڤیسە بۆ ناردنا نامەیەکێ.", btnText: "ڤەکرنا ئێمێلی", type: "email", baseUrl: "mailto:", colors: { main: "#EA4335", dark: "#c5221f", light: "rgba(234, 67, 53, 0.15)", shadow: "rgba(234, 67, 53, 0.4)" }, svg: '<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>' },
     qr: { id: "qr", name: "QR Code Scaner", desc: "وێنێ QR Code هەلبژێرە یان سکەن بکە بۆ دەرخستنا پێزانینان و لینکان.", btnText: "هەلبژارتنا وێنەی", type: "qr", baseUrl: "", colors: { main: "#ff9000", dark: "#cc7300", light: "rgba(255, 144, 0, 0.15)", shadow: "rgba(255, 144, 0, 0.4)" }, svg: '<path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-4 4h2v2h-2zm2 2h2v2h-2zm-2 2h2v2h-2zm2 2h2v2h-2zm-4-4h2v2h-2zm0 4h2v2h-2zm4-8h4v2h-4z"/>' }
 };
 
@@ -63,9 +97,16 @@ const btnIconWrapper = document.getElementById("btnIconWrapper");
 const themeColorMeta = document.getElementById("themeColorMeta");
 const plusSign = document.getElementById("plusSign");
 
+// بەشەکانی درۆپداونی وڵاتان
+const countrySelectBtn = document.getElementById("countrySelectBtn");
+const countryDropdown = document.getElementById("countryDropdown");
+const countrySearch = document.getElementById("countrySearch");
+const countryList = document.getElementById("countryList");
+const selectedFlag = document.getElementById("selectedFlag");
+const selectedName = document.getElementById("selectedName");
+
 const phoneInputSection = document.getElementById("phoneInputSection");
 const textInputSection = document.getElementById("textInputSection");
-const countrySelect = document.getElementById("countrySelect");
 const countryCodeInput = document.getElementById("countryCodeInput");
 const phoneInput = document.getElementById("phoneInput");
 const textInput = document.getElementById("textInput");
@@ -90,6 +131,9 @@ function setupPlatforms() {
         let btn = document.createElement("button");
         btn.className = "platform-btn";
         if (plat.id === activePlatform) btn.classList.add("active");
+        
+        btn.style.setProperty('--brand-color', plat.colors.main);
+        
         btn.innerHTML = `<svg viewBox="0 0 24 24">${plat.svg}</svg>`;
         btn.onclick = () => { vibrate(30); switchPlatform(plat.id, btn); };
         platformSelector.appendChild(btn);
@@ -107,7 +151,8 @@ function switchPlatform(platId, btnElement) {
     document.documentElement.style.setProperty('--theme-shadow', plat.colors.shadow);
     document.documentElement.style.setProperty('--text-on-theme', platId === 'snapchat' ? '#000000' : '#ffffff');
     themeColorMeta.setAttribute("content", plat.colors.main);
-    plusSign.style.color = plat.colors.main;
+    
+    plusSign.style.color = 'var(--text-dark)';
 
     document.querySelectorAll(".platform-btn").forEach(b => b.classList.remove("active"));
     btnElement.classList.add("active");
@@ -122,7 +167,7 @@ function switchPlatform(platId, btnElement) {
         mainDesc.innerText = plat.desc;
         btnText.innerText = plat.btnText;
         
-        btnIconWrapper.innerHTML = `<svg viewBox="0 0 24 24" id="btnIcon"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>`;
+        btnIconWrapper.innerHTML = `<svg viewBox="0 0 24 24" id="btnIcon"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>`;
     }, 200);
 
     if (plat.type === "phone") {
@@ -133,6 +178,82 @@ function switchPlatform(platId, btnElement) {
         phoneInputSection.style.display = "none"; textInputSection.style.display = "none"; document.getElementById("qrInputSection").style.display = "block";
     }
 }
+
+// ---------------------------------------------
+// سیستەمی نوێی درۆپداونی وڵاتان
+// ---------------------------------------------
+function renderCountryList(list) {
+    countryList.innerHTML = "";
+    if(list.length === 0) {
+        countryList.innerHTML = `<li style="justify-content:center; color:#9ca3af;">هیچ وڵاتێک نەدۆزرایەوە</li>`;
+        return;
+    }
+    list.forEach(country => {
+        let li = document.createElement("li");
+        li.innerHTML = `
+            <div class="country-item-left">
+                <span class="flag">${country.flag}</span>
+                <span class="name-en">${country.nameEn}</span>
+            </div>
+            <div class="country-item-right">
+                <span class="code">(+${country.code})</span>
+                <span class="name-ku">${country.nameKu}</span>
+            </div>
+        `;
+        li.onclick = () => selectCountry(country);
+        countryList.appendChild(li);
+    });
+}
+
+function selectCountry(country) {
+    selectedFlag.innerText = country.flag;
+    selectedName.innerText = `(+${country.code}) ${country.nameKu} - ${country.nameEn}`;
+    countryCodeInput.value = country.code;
+    countryDropdown.classList.remove("active");
+    countrySearch.value = "";
+    renderCountryList(countries);
+    phoneInput.focus();
+}
+
+countrySelectBtn.addEventListener("click", () => {
+    countryDropdown.classList.toggle("active");
+    if(countryDropdown.classList.contains("active")) {
+        countrySearch.focus();
+    }
+});
+
+// داختستنی لیستەکە کاتێک کلیک لە دەرەوە دەکرێت
+document.addEventListener("click", (e) => {
+    if(!document.getElementById("customSelectWrapper").contains(e.target)) {
+        countryDropdown.classList.remove("active");
+    }
+});
+
+// گەڕان بەدوای وڵاتەکاندا (کاپیتەڵ، سمۆڵ، دەستپێک)
+countrySearch.addEventListener("input", (e) => {
+    const term = e.target.value.toLowerCase().trim();
+    const filtered = countries.filter(c => 
+        c.nameEn.toLowerCase().startsWith(term) ||
+        c.nameEn.toLowerCase().includes(term) ||
+        c.nameKu.includes(term) ||
+        c.code.includes(term)
+    );
+    renderCountryList(filtered);
+});
+
+countryCodeInput.addEventListener("input", function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+    let found = countries.find(c => c.code === this.value);
+    if(found) {
+        selectedFlag.innerText = found.flag;
+        selectedName.innerText = `(+${found.code}) ${found.nameKu} - ${found.nameEn}`;
+    } else if (this.value !== "") {
+        selectedFlag.innerText = "🌍";
+        selectedName.innerText = `(+${this.value}) وڵاتێکی دی... - Other...`;
+    }
+});
+
+// ---------------------------------------------
 
 function spawnRain() {
     const container = document.getElementById("rainContainer");
@@ -164,32 +285,6 @@ function spawnBubbles() {
     setTimeout(() => bubble.remove(), 1800);
 }
 setInterval(spawnBubbles, 250); 
-
-function populateCountries() {
-    countrySelect.innerHTML = ""; 
-    countries.forEach(country => {
-        let option = document.createElement("option");
-        option.value = country.code;
-        option.text = `\u200F${country.name} (\u202A+${country.code}\u202C) ${country.flag}`;
-        countrySelect.appendChild(option);
-    });
-    countrySelect.value = "964";
-    countryCodeInput.value = "964";
-}
-
-countrySelect.addEventListener("change", function() {
-    if (this.value !== "unknown") countryCodeInput.value = this.value;
-    else { countryCodeInput.value = ""; countryCodeInput.focus(); }
-});
-
-countryCodeInput.addEventListener("input", function() {
-    this.value = this.value.replace(/[^0-9]/g, '');
-    let found = false;
-    for (let i = 0; i < countries.length; i++) {
-        if (countries[i].code === this.value) { countrySelect.value = this.value; found = true; break; }
-    }
-    if (!found && this.value !== "") countrySelect.value = "unknown";
-});
 
 phoneInput.addEventListener("input", function() {
     this.value = this.value.replace(/[^0-9]/g, '');
@@ -237,7 +332,7 @@ function executeAction() {
     setTimeout(() => {
         window.open(finalUrl, '_blank', 'noopener,noreferrer');
         btnText.innerText = originalText;
-        btnIconWrapper.innerHTML = `<svg viewBox="0 0 24 24" id="btnIcon"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>`;
+        btnIconWrapper.innerHTML = `<svg viewBox="0 0 24 24" id="btnIcon"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>`;
     }, 600); 
 }
 
@@ -247,16 +342,18 @@ textInput.addEventListener("keypress", e => { if (e.key === "Enter") executeActi
 
 window.onload = () => {
     setupPlatforms();
-    populateCountries();
+    renderCountryList(countries);
+    
+    mainTitle.innerText = platformsData['whatsapp'].name;
+    mainDesc.innerText = platformsData['whatsapp'].desc;
+    btnText.innerText = platformsData['whatsapp'].btnText;
     mainIconContainer.innerHTML = `<svg viewBox="0 0 24 24">${platformsData['whatsapp'].svg}</svg>`;
 };
 
-// =========================================
-//   تایبەتمەندییا QR Code 
-// =========================================
+// --- تایبەتمەندییا QR Code ---
 const qrFileInput = document.getElementById("qrFileInput");
 const qrModal = document.getElementById("qrModal");
-const qrType = document.getElementById("qrType");
+const qrType = document.querySelector("#qrType span");
 const qrData = document.getElementById("qrData");
 const btnOpenQr = document.getElementById("btnOpenQr");
 const btnCopyQr = document.getElementById("btnCopyQr");
@@ -291,102 +388,23 @@ qrFileInput.addEventListener("change", function(e) {
 
 function analyzeQrData(data) {
     currentQrResult = data;
-    let displayHtml = "";
+    qrData.innerText = data;
     
-    // 1. لینک (URL)
-    if (data.toLowerCase().startsWith("http://") || data.toLowerCase().startsWith("https://")) {
-        qrType.innerHTML = "جۆر: <span>لینک (URL)</span>";
-        displayHtml = `<a href="${data}" target="_blank" style="color: var(--theme-main); text-decoration: none; word-break: break-all;">${data}</a>`;
+    if(data.toLowerCase().startsWith("http://") || data.toLowerCase().startsWith("https://")) {
+        qrType.innerText = "لینک (URL)";
         btnOpenQr.style.display = "block";
-        btnOpenQr.innerText = "ڤەکرنا لینکێ";
         btnOpenQr.onclick = () => window.open(data, '_blank');
-        
-    // 2. وایفای (WiFi)
     } else if (data.toUpperCase().startsWith("WIFI:")) {
-        qrType.innerHTML = "جۆر: <span>تۆڕا وایفای (WiFi)</span>";
+        qrType.innerText = "تۆڕا وایفای (WiFi)";
         btnOpenQr.style.display = "none";
-        
         let ssid = data.match(/S:([^;]+)/);
         let pass = data.match(/P:([^;]+)/);
-        let type = data.match(/T:([^;]+)/);
-        let hidden = data.match(/H:([^;]+)/) ? (data.match(/H:([^;]+)/)[1].toLowerCase() === 'true' ? "بەلێ" : "نەخێر") : "نەخێر";
-        
-        displayHtml = `
-            <b>ناڤێ تۆڕێ (SSID):</b> ${ssid ? ssid[1] : 'نەدیار'}<br><br>
-            <b>پاسۆرد:</b> ${pass ? pass[1] : 'بێ پاسۆرد'}<br><br>
-            <b>جۆرێ سیکیوریتی:</b> ${type ? type[1] : 'بێ پاراستن'}<br><br>
-            <b>تۆڕا ڤەشارتی:</b> ${hidden}
-        `;
-        
-    // 3. کۆنتاکت و ژمارا مۆبایلێ (vCard / meCard)
-    } else if (data.toUpperCase().startsWith("BEGIN:VCARD") || data.toUpperCase().startsWith("MECARD:")) {
-        qrType.innerHTML = "جۆر: <span>کۆنتاکت (ناسنامە)</span>";
-        
-        let name = data.match(/FN:([^;\n\r]+)/i) || data.match(/N:([^;\n\r]+)/i) || ["", "نەدیار"];
-        let phone = data.match(/TEL[^:]*:([^;\n\r]+)/i) || ["", "نەدیار"];
-        let email = data.match(/EMAIL[^:]*:([^;\n\r]+)/i) || ["", "نەدیار"];
-        
-        displayHtml = `
-            <b>ناڤ:</b> ${name[1].replace(/;/g, ' ')}<br><br>
-            <b>مۆبایل:</b> ${phone[1]}<br><br>
-            <b>ئیمێل:</b> ${email[1]}
-        `;
-        
-        btnOpenQr.style.display = "block";
-        btnOpenQr.innerText = "پاشکەوتکرن";
-        btnOpenQr.onclick = () => {
-            const blob = new Blob([data], { type: 'text/vcard' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url; a.download = 'contact.vcf'; a.click();
-        };
-
-    // 4. جهـ و نەخشە (Geo Location)
-    } else if (data.toLowerCase().startsWith("geo:")) {
-        qrType.innerHTML = "جۆر: <span>جهـ (نەخشە)</span>";
-        let coords = data.substring(4).split('?')[0];
-        displayHtml = `<b>کۆردینات:</b> ${coords}`;
-        btnOpenQr.style.display = "block";
-        btnOpenQr.innerText = "ڤەکرن د نەخشەی دا";
-        btnOpenQr.onclick = () => window.open(`https://maps.google.com/?q=${coords}`, '_blank');
-
-    // 5. ئیمێل (Email)
-    } else if (data.toLowerCase().startsWith("mailto:") || data.toUpperCase().startsWith("MATMSG:")) {
-        qrType.innerHTML = "جۆر: <span>ئیمێل</span>";
-        let emailAddr = data.toLowerCase().startsWith("mailto:") ? data.substring(7).split('?')[0] : (data.match(/TO:([^;]+)/i) || ["",""])[1];
-        displayHtml = `<b>ئیمێل:</b> ${emailAddr}`;
-        btnOpenQr.style.display = "block";
-        btnOpenQr.innerText = "هنارتنا ئیمێلی";
-        btnOpenQr.onclick = () => window.open(data, '_self');
-
-    // 6. پەیوەندیکرن (Phone Call)
-    } else if (data.toLowerCase().startsWith("tel:")) {
-        qrType.innerHTML = "جۆر: <span>تەلەفۆن (پەیوەندی)</span>";
-        let phoneNum = data.substring(4);
-        displayHtml = `<b>ژمارە:</b> ${phoneNum}`;
-        btnOpenQr.style.display = "block";
-        btnOpenQr.innerText = "پەیوەندیکرن";
-        btnOpenQr.onclick = () => window.open(data, '_self');
-
-    // 7. کورتەنامە (SMS)
-    } else if (data.toLowerCase().startsWith("smsto:")) {
-        qrType.innerHTML = "جۆر: <span>کورتەنامە (SMS)</span>";
-        let parts = data.split(':');
-        let phoneNum = parts[1] || "نەدیار";
-        let msgBody = parts[2] || "";
-        displayHtml = `<b>بۆ ژمارە:</b> ${phoneNum}<br><br><b>نامە:</b> ${decodeURIComponent(msgBody)}`;
-        btnOpenQr.style.display = "block";
-        btnOpenQr.innerText = "هنارتنا نامێ";
-        btnOpenQr.onclick = () => window.open(data, '_self');
-
-    // 8. تێکستێ ئاسایی (Plain Text)
+        qrData.innerHTML = `<b>ناڤێ تۆڕێ:</b> ${ssid ? ssid[1] : 'نەدیار'}<br><br><b>پاسۆرد:</b> ${pass ? pass[1] : 'بێ پاسۆرد'}`;
     } else {
-        qrType.innerHTML = "جۆر: <span>تێکست (دەق)</span>";
+        qrType.innerText = "تێکست (دەق)";
         btnOpenQr.style.display = "none";
-        displayHtml = data.replace(/\n/g, '<br>');
     }
     
-    qrData.innerHTML = displayHtml;
     qrModal.classList.add("active");
 }
 
