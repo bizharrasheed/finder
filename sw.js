@@ -1,4 +1,4 @@
-const CACHE_NAME = "contact-finder-v17"; 
+const CACHE_NAME = "contact-finder-v28"; 
 const assets = [
   "./",
   "./index.html",
