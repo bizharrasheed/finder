@@ -2,7 +2,7 @@
 const i18n = {
     brandSub: { bd: "لێگەڕیان ب ساناھی", ckb: "گەڕان بە ئاسانی", ar: "بحث سهل وسريع", fa: "جستجوی آسان و سریع", tr: "Hızlı ve Kolay Arama", en: "Find Anyone • Fast & Easy" },
     badge: { bd: "بلەز • بهێز • بێبەرامبەر", ckb: "بەخێرایی • بەهێز • بێبەرامبەر", ar: "سريع • قوي • مجاني", fa: "سریع • قدرتمند • رایگان", tr: "Hızlı • Güçlü • Ücretsiz", en: "Fast • Powerful • Free" },
-    searchCountry: { bd: "گەڕان بۆ وڵات...", ckb: "گەڕان بۆ وڵات...", ar: "بحث عن دولة...", fa: "جستجوی کشور...", tr: "Ülke ara...", en: "Search country..." },
+    searchCountry: { bd: " ناڤێ وەلاتی بنڤیسە...", ckb: "گەڕان بۆ وڵات...", ar: "بحث عن دولة...", fa: "جستجوی کشور...", tr: "Ülke ara...", en: "Search country..." },
     phonePlaceholder: { bd: "ژمارە یان یوزەرنەیم...", ckb: "ژمارە یان یوزەرنەیم...", ar: "رقم أو اسم المستخدم...", fa: "شماره یا نام کاربری...", tr: "Numara veya kullanıcı adı...", en: "Number or username..." },
     btnHistory: { bd: "🕒 لەگەریانێن کەڤن", ckb: "🕒 پێشینە", ar: "🕒 السجل", fa: "🕒 تاریخچه", tr: "🕒 Geçmiş", en: "🕒 History" },
     btnMyQR: { bd: "🪪 کارتا من", ckb: "🪪 کارتی من", ar: "🪪 بطاقتي", fa: "🪪 کارت من", tr: "🪪 Kartım", en: "🪪 My Card" },
@@ -14,7 +14,7 @@ const i18n = {
     
     // Menu
     menuTitle: { bd: "مێنیو", ckb: "مێنیو", ar: "القائمة", fa: "منو", tr: "Menü", en: "Menu" },
-    menuDark: { bd: "دۆخی تاریک", ckb: "دۆخی تاریک", ar: "الوضع الداكن", fa: "حالت تاریک", tr: "Karanlık Mod", en: "Dark Mode" },
+    menuDark: { bd: "دۆخێ تاری", ckb: "دۆخی تاریک", ar: "الوضع الداكن", fa: "حالت تاریک", tr: "Karanlık Mod", en: "Dark Mode" },
     menuTheme: { bd: "ڕەنگێ پرۆگرامی", ckb: "ڕەنگی پرۆگرام", ar: "لون التطبيق", fa: "رنگ برنامه", tr: "Uygulama Rengi", en: "App Theme" },
     menuLang: { bd: "گۆڕینا زمانێ", ckb: "گۆڕینی زمان", ar: "تغيير اللغة", fa: "تغییر زبان", tr: "Dili Değiştir", en: "Change Language" },
     menuShare: { bd: "بەلاڤکرن", ckb: "شەیرکردن", ar: "مشاركة التطبيق", fa: "اشتراک‌گذاری", tr: "Uygulamayı Paylaş", en: "Share App" },
@@ -103,7 +103,7 @@ const platformsData = {
     },
     telegram: { id: "telegram", type: "text", baseUrl: "https://t.me/", colors: { main: "#0088cc", dark: "#006699", light: "rgba(0,136,204,0.15)", shadow: "rgba(0,136,204,0.4)" }, svg: '<path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 7.85l-1.95 9.17c-.15.65-.54.82-1.09.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.08 5.6-5.06c.25-.22-.05-.34-.38-.11l-6.93 4.36-2.98-.93c-.65-.2-.66-.65.14-.96l11.64-4.49c.54-.2 1.01.12.8.1z"/>',
         name: { bd:"تێلگرام", ckb:"تێلگرام", ar:"تيليجرام", fa:"تلگرام", tr:"Telegram", en:"Telegram" },
-        desc: { bd:"یوزەرنەیمی بنڤیسە بۆ پەیوەندیێ.", ckb:"یوزەرنەیم بنووسە بۆ پەیوەندی.", ar:"أدخل اسم المستخدم للمراسلة.", fa:"نام کاربری را برای پیام وارد کنید.", tr:"İletişim için kullanıcı adını girin.", en:"Enter username to contact." },
+        desc: { bd:"یوزەرنەیم یان ژمارێ بنڤیسە بۆ پەیوەندیێ.", ckb:"یوزەرنەیم بنووسە بۆ پەیوەندی.", ar:"أدخل اسم المستخدم للمراسلة.", fa:"نام کاربری را برای پیام وارد کنید.", tr:"İletişim için kullanıcı adını girin.", en:"Enter username to contact." },
         btnText: { bd:"ڤەکرنا تێلگرامی", ckb:"کردنەوەی تێلگرام", ar:"فتح تيليجرام", fa:"باز کردن تلگرام", tr:"Telegram'ı Aç", en:"Open Telegram" }
     },
     twitter: { id: "twitter", type: "text", baseUrl: "https://twitter.com/", colors: { main: "#000000", dark: "#1a202c", light: "rgba(0,0,0,0.15)", shadow: "rgba(0,0,0,0.4)" }, svg: '<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>',
@@ -123,7 +123,7 @@ const platformsData = {
     },
     email: { id: "email", type: "email", baseUrl: "mailto:", colors: { main: "#EA4335", dark: "#c5221f", light: "rgba(234,67,53,0.15)", shadow: "rgba(234,67,53,0.4)" }, svg: '<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>',
         name: { bd:"ئیمێل", ckb:"ئیمەیڵ", ar:"بريد إلكتروني", fa:"ایمیل", tr:"E-posta", en:"Email" },
-        desc: { bd:"ناونیشانێ ئیمێلی بنڤیسە بۆ ناردنا نامەیەکێ.", ckb:"ئیمەیڵ بنووسە بۆ ناردنی نامە.", ar:"أدخل البريد الإلكتروني لإرسال رسالة.", fa:"آدرس ایمیل را برای ارسال پیام وارد کنید.", tr:"Mesaj göndermek için e-posta girin.", en:"Enter email to send a message." },
+        desc: { bd:"ناڤ و نیشانێ ئیمێلی بنڤیسە بۆ ناردنا نامەیەکێ.", ckb:"ئیمەیڵ بنووسە بۆ ناردنی نامە.", ar:"أدخل البريد الإلكتروني لإرسال رسالة.", fa:"آدرس ایمیل را برای ارسال پیام وارد کنید.", tr:"Mesaj göndermek için e-posta girin.", en:"Enter email to send a message." },
         btnText: { bd:"ڤەکرنا ئێمێلی", ckb:"کردنەوەی ئیمەیڵ", ar:"إرسال بريد", fa:"ارسال ایمیل", tr:"E-posta Gönder", en:"Send Email" }
     },
     qr: { id: "qr", type: "qr", baseUrl: "", colors: { main: "#ff9000", dark: "#cc7300", light: "rgba(255,144,0,0.15)", shadow: "rgba(255,144,0,0.4)" }, svg: '<path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-4 4h2v2h-2zm2 2h2v2h-2zm-2 2h2v2h-2zm2 2h2v2h-2zm-4-4h2v2h-2zm0 4h2v2h-2zm4-8h4v2h-4z"/>',
