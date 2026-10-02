@@ -21,39 +21,39 @@ body.dark-mode {
     --card-bg: rgba(30, 41, 59, 0.95);
     --input-bg: #1e293b;
     --border-color: #334155;
-    background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700;900&display=swap');
 
 * { box-sizing: border-box; font-family: 'Noto Kufi Arabic', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
 
+/* سەنتەرکرن و فۆل سکرین */
+html, body {
+    margin: 0; padding: 0; min-height: 100vh;
+    background-color: var(--bg-color);
+    background-image: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-color) 100%);
+    transition: all 0.5s ease; text-rendering: optimizeLegibility; 
+}
+
 body {
-    margin: 0; padding: 0; display: flex; justify-content: center; align-items: flex-start;
-    min-height: 100vh; background-color: var(--bg-color); background-image: linear-gradient(135deg, #eef4f2 0%, #f7fbf9 100%);
-    transition: all 0.5s ease; text-rendering: optimizeLegibility; overflow-x: hidden; 
+    display: flex; justify-content: center; align-items: flex-start;
 }
 
-/* Toasts & Rain */
-.toast {
-    position: fixed; top: -100px; left: 50%; transform: translateX(-50%);
-    background: var(--card-bg); color: var(--text-dark); padding: 15px 25px;
-    border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: flex; align-items: center; gap: 12px; z-index: 9999;
-    font-weight: 700; font-size: 15px; transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+.app-container { 
+    width: 100%; max-width: 480px; min-height: 100vh;
+    background-image: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
+    position: relative; z-index: 10; display: flex; flex-direction: column;
+    box-shadow: 0 0 30px rgba(0,0,0,0.08); /* سێبەری جوان بۆ لاپتۆپ و تابلێت */
 }
-.toast.show { top: 25px; }
-.rain-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0; overflow: hidden; pointer-events: none; }
-.rain-icon { position: absolute; top: -60px; opacity: 0; animation: fallDown linear forwards; }
-.rain-icon svg { width: 100%; height: 100%; fill: var(--theme-light); }
-@keyframes fallDown { 0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; } 10% { opacity: 0.15; } 80% { opacity: 0.15; } 100% { transform: translateY(110vh) rotate(360deg) scale(1.3); opacity: 0; } }
 
-.app-container { width: 100%; max-width: 480px; min-height: 100vh; position: relative; z-index: 10; display: flex; flex-direction: column; }
+/* هێدەری جێگیر (Sticky Nav) */
+.top-nav-fixed {
+    position: sticky; top: 0; z-index: 100;
+}
 
-/* Header Centered Layout */
 .app-header {
     background: linear-gradient(135deg, var(--theme-dark) 0%, var(--theme-main) 100%);
-    padding: 25px 20px 45px 20px; 
+    padding: max(25px, env(safe-area-inset-top)) 20px 45px 20px; 
     display: grid; grid-template-columns: 50px 1fr 50px; align-items: center;
     border-bottom-left-radius: 35px; border-bottom-right-radius: 35px; box-shadow: 0 10px 20px var(--theme-shadow);
     transition: all 0.5s ease;
@@ -63,7 +63,6 @@ body {
 .brand-title strong { font-weight: 900; }
 .brand-sub { font-size: 13px; opacity: 0.9; margin-top: 2px; }
 
-/* Menu button on LEFT */
 .header-left { grid-column: 1; display: flex; justify-content: flex-start; }
 .header-right { grid-column: 3; }
 
@@ -74,15 +73,16 @@ body {
 }
 .hamburger-btn:hover { background: rgba(255,255,255,0.3); transform: scale(1.05); }
 
-.content-wrapper { padding: 0 20px; margin-top: -30px; flex: 1; display: flex; flex-direction: column; }
-
-/* Platforms */
+/* لیستی پلاتفۆرمەکان */
+.platforms-wrapper-outer {
+    padding: 0 20px; margin-top: -30px; position: relative; z-index: 20; padding-bottom: 15px; 
+}
 .platforms-wrapper {
-    background: var(--card-bg); border-radius: 40px; padding: 8px; margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08), inset 0 2px 8px rgba(0,0,0,0.04); width: 100%; position: relative; z-index: 20;
+    background: var(--card-bg); border-radius: 40px; padding: 8px; margin-bottom: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08), inset 0 2px 8px rgba(0,0,0,0.04); width: 100%;
     border: 1px solid var(--border-color); transition: all 0.5s ease;
 }
-.platform-selector { display: flex; overflow-x: auto; gap: 14px; padding: 10px; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+.platform-selector { display: flex; overflow-x: auto; gap: 14px; padding: 10px; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .platform-selector::-webkit-scrollbar { display: none; }
 .platform-btn {
     background: var(--input-bg); border: none; border-radius: 16px; width: 52px; height: 52px; display: flex; justify-content: center; align-items: center; 
@@ -92,6 +92,8 @@ body {
 .platform-btn:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.12); }
 .platform-btn.active { background: var(--theme-main); box-shadow: 0 0 0 3px var(--card-bg), 0 0 0 6px var(--theme-light), 0 10px 20px var(--theme-shadow); }
 .platform-btn.active svg { fill: #ffffff; }
+
+.content-wrapper { padding: 5px 20px 20px 20px; flex: 1; display: flex; flex-direction: column; }
 
 /* Hero Section */
 .hero-section { text-align: center; margin-bottom: 20px; }
@@ -167,10 +169,17 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 .app-footer a:hover { transform: scale(1.05); opacity: 0.8; }
 .app-footer strong { font-weight: 900; margin-right: 4px; }
 
+/* چارەسەرکرنا کێشەیا وشەیا "پەیام" ل تەنیشتێ */
+.toast {
+    position: fixed; top: -100px; left: 0; right: 0; margin: 0 auto;
+    width: fit-content; max-width: 90%; z-index: 9999;
+}
+.toast.show { top: max(25px, env(safe-area-inset-top)); }
+
 /* General Modals */
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
 .modal-overlay.active { opacity: 1; pointer-events: auto; }
-.qr-modal-content { background: var(--card-bg); width: 90%; max-width: 400px; padding: 25px; border-radius: 25px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); transform: translateY(20px); transition: transform 0.3s; border: 1px solid var(--border-color); max-height: 85vh; overflow-y: auto; }
+.qr-modal-content { background: var(--card-bg); width: 90%; max-width: 400px; padding: 25px; border-radius: 25px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); transform: translateY(20px); transition: transform 0.3s; border: 1px solid var(--border-color); max-height: 85vh; overflow-y: auto; margin: auto; }
 .modal-overlay.active .qr-modal-content { transform: translateY(0); }
 .qr-modal-content h3 { margin: 0 0 15px 0; color: var(--text-dark); font-weight: 900; }
 .qr-modal-content p { margin: 0 0 10px 0; color: var(--text-gray); font-size: 14px; font-weight: 700; }
@@ -181,7 +190,7 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 .modal-btn.main-btn { background: var(--theme-main); color: #fff; }
 .modal-btn.cancel-btn { background: var(--input-bg); color: var(--text-dark); border: 1px solid var(--border-color); }
 
-/* ==== Side Drawer Menu (مێنیویا لایێ چەپێ یا ڕاقی) ==== */
+/* ==== Side Drawer Menu (مێنیویا لایێ چەپێ دگەل دەمژمێرێ) ==== */
 .menu-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
@@ -189,49 +198,53 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 }
 .menu-overlay.active { opacity: 1; pointer-events: auto; }
 
-/* گۆڕانکاری سەرەکی: مێنیو هەمیشە لە چەپەوە دێت */
 .side-menu-panel {
-    position: fixed; top: 0; left: -320px; width: 300px; height: 100%;
+    position: fixed; top: 0; left: -320px; bottom: 0; width: 300px; height: 100%;
     background: var(--card-bg); z-index: 2600;
     box-shadow: 10px 0 40px rgba(0,0,0,0.3);
     transition: left 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     display: flex; flex-direction: column;
     border-right: 1px solid var(--border-color);
 }
+[dir="ltr"] .side-menu-panel { left: auto; right: -320px; border-right: none; border-left: 1px solid var(--border-color); box-shadow: -10px 0 40px rgba(0,0,0,0.3); transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);}
 .side-menu-panel.active { left: 0; }
+[dir="ltr"] .side-menu-panel.active { right: 0; }
 
-.menu-header-banner {
+.clock-widget {
     background: linear-gradient(135deg, var(--theme-dark) 0%, var(--theme-main) 100%);
-    padding: 40px 20px 20px 20px; color: white; position: relative;
-    border-bottom-right-radius: 30px; border-bottom-left-radius: 5px;
-    box-shadow: 0 10px 20px var(--theme-shadow);
+    padding: max(40px, env(safe-area-inset-top)) 20px 30px 20px;
+    color: #ffffff; text-align: center; position: relative;
+    border-bottom-right-radius: 40px; box-shadow: 0 10px 25px var(--theme-shadow);
 }
-.menu-logo-circle {
-    width: 60px; height: 60px; background: rgba(255,255,255,0.2);
-    border-radius: 50%; display: flex; justify-content: center; align-items: center;
-    margin-bottom: 10px; backdrop-filter: blur(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+[dir="ltr"] .clock-widget { border-bottom-right-radius: 0; border-bottom-left-radius: 40px; }
+
+.menu-clock-container { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.clock-time {
+    font-size: 40px; font-weight: 900; font-family: monospace, sans-serif;
+    letter-spacing: 2px; margin-bottom: 5px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); direction: ltr;
 }
-.menu-header-banner h3 { margin: 0 0 5px 0; font-size: 22px; font-weight: 900; }
-.menu-header-banner p { margin: 0; font-size: 13px; opacity: 0.8; }
+.clock-date { font-size: 13px; font-weight: 700; opacity: 0.9; }
+
 .close-menu-btn {
-    position: absolute; top: 20px; right: 20px;
-    background: rgba(0,0,0,0.15); border: none; color: white;
+    position: absolute; top: max(15px, env(safe-area-inset-top)); right: 15px;
+    background: rgba(255,255,255,0.2); border: none; color: white;
     width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
-    display: flex; justify-content: center; align-items: center; font-size: 12px; transition: 0.3s;
+    display: flex; justify-content: center; align-items: center; font-size: 14px; transition: 0.3s;
 }
+[dir="ltr"] .close-menu-btn { right: auto; left: 15px; }
 .close-menu-btn:hover { background: var(--error-color); transform: rotate(90deg) scale(1.1); }
 
-.side-menu-items { flex: 1; overflow-y: auto; padding: 25px 15px; display: flex; flex-direction: column; gap: 12px; direction: ltr; }
+.side-menu-items { flex: 1; overflow-y: auto; padding: 25px 15px; display: flex; flex-direction: column; gap: 12px; }
 .menu-list-btn {
     display: flex; align-items: center; gap: 15px; background: var(--input-bg); border: 1px solid var(--border-color);
     padding: 12px 15px; border-radius: 16px; cursor: pointer; transition: all 0.3s ease;
-    color: var(--text-dark); text-align: left; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.02); direction: ltr;
+    color: var(--text-dark); text-align: inherit; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 .menu-list-btn:hover { background: var(--theme-light); border-color: var(--theme-main); transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+[dir="ltr"] .menu-list-btn:hover { transform: translateX(-5px); }
 .menu-icon { font-size: 20px; background: var(--card-bg); width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 .menu-text { font-size: 15px; font-weight: 900; flex: 1; }
 .menu-arrow { opacity: 0.5; font-size: 12px; }
-/* ========================================= */
 
 /* History & Themes Grid */
 .history-list { display:flex; flex-direction:column; gap:10px; text-align:inherit; }
