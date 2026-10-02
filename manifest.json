@@ -3,9 +3,9 @@
   "short_name": "Contact Finder",
   "description": "پەیوەندیێ ب هەر کەسەکی بکە ل سەر هەمی پلاتفۆرمان ب دیزاینەکا پرۆفیشناڵ.",
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#eef4f2",
-  "theme_color": "#01533b",
+  "theme_color": "#00b15c",
   "orientation": "portrait",
   "icons": [
     {
@@ -21,4 +21,3 @@
     }
   ]
 }
-
