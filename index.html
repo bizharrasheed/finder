@@ -2,8 +2,7 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- ڕێگریکرن ل سەیڤکرنا زۆرەملێ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -14,6 +13,7 @@
     <meta name="theme-color" content="#00b15c" id="themeColorMeta">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Contact Finder">
     <link rel="apple-touch-icon" href="https://i.postimg.cc/FHNCZRbx/7C5085D4-2C87-4EE0-B89A-B5C6BBFADA74.jpg">
@@ -25,7 +25,7 @@
 </head>
 <body id="appBody">
 
-    <!-- سیستەمێ ئاگەهدارکرنێ (Toast) -->
+    <!-- سیستەمێ ئاگەهدارکرنێ (Toast) - چارەسەرکرا -->
     <div id="toastNotification" class="toast">
         <span id="toastMessage">پەیام</span>
     </div>
@@ -35,27 +35,32 @@
 
     <div class="app-container">
         
-        <!-- هێدەرێ سەری یێ زۆر ڕێکخستی و سەنتەر -->
-        <header class="app-header">
-            <div class="header-left">
-                <!-- دوگمەیا مێنیویێ ل لایێ چەپێ -->
-                <button id="btnOpenMenu" class="hamburger-btn" title="مێنیو">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-                </button>
-            </div>
-            <div class="header-brand">
-                <span class="brand-title">Contact <strong>Finder</strong></span>
-                <span class="brand-sub" id="txtSub" data-i18n="brandSub">لێگەڕان ب ساناھی</span>
-            </div>
-            <div class="header-right"></div>
-        </header>
+        <!-- بەشێ سەرەوە یێ جێگیر (Sticky Top Bar) -->
+        <div class="top-nav-fixed">
+            <!-- هێدەرێ سەری -->
+            <header class="app-header">
+                <div class="header-left">
+                    <button id="btnOpenMenu" class="hamburger-btn" title="مێنیو">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                    </button>
+                </div>
+                <div class="header-brand">
+                    <span class="brand-title">Contact <strong>Finder</strong></span>
+                    <span class="brand-sub" id="txtSub" data-i18n="brandSub">لێگەڕان ب ساناھی</span>
+                </div>
+                <div class="header-right"></div>
+            </header>
 
-        <div class="content-wrapper">
             <!-- لیستا پلاتفۆرمان -->
-            <div class="platforms-wrapper">
-                <div class="platform-selector" id="platformSelector"></div>
+            <div class="platforms-wrapper-outer">
+                <div class="platforms-wrapper">
+                    <div class="platform-selector" id="platformSelector"></div>
+                </div>
             </div>
+        </div>
 
+        <!-- بەشێ خوارەوە کو لڤلڤینێ دکەت (Scrollable Area) -->
+        <div class="content-wrapper">
             <!-- لۆگۆیا سەرەکی -->
             <div class="hero-section">
                 <div class="logo-container">
@@ -67,10 +72,10 @@
                 </div>
 
                 <h1 id="mainTitle">واتسئاپ</h1>
-                <p id="mainDesc">ژمارێ بنڤیسە بێی سەیڤکرن، ڕاستەوخۆ دێ چات ڤەبیت.</p>
+                <p id="mainDesc">ژمارێ یان یوزەرنەیمی بنڤیسە، ڕاستەوخۆ دێ چات ڤەبیت.</p>
                 
                 <div class="feature-badge" id="txtBadge" data-i18n="badge">
-                    بلەز • بهێز • بێبەرامبەر
+                    بەخێرایی • بەهێز • بێبەرامبەر
                 </div>
             </div>
             
@@ -102,7 +107,7 @@
                                 <input type="tel" id="countryCodeInput" placeholder="964" value="964">
                             </div>
                             <div class="input-box phone-box" dir="ltr" id="phoneGroup">
-                                <input type="tel" id="phoneInput" placeholder="750 364 4666" autocomplete="off">
+                                <input type="text" id="phoneInput" data-i18n-placeholder="phonePlaceholder" placeholder="ژمارە یان یوزەرنەیم..." autocomplete="off">
                                 <button class="mic-btn" id="btnMicPhone" title="دەنگ">🎤</button>
                             </div>
                         </div>
@@ -134,7 +139,7 @@
                 <div class="action-buttons-group">
                     <button id="btnOpenHistory" class="mini-action-btn" data-i18n="btnHistory">🕒 پێشینە</button>
                     <button id="btnOpenMyQR" class="mini-action-btn" data-i18n="btnMyQR">🪪 کۆتێ من</button>
-                    <!-- دوگمەیا سەیڤکرنا ژمارێ ب ئاشکرایی -->
+                    <!-- دوگمەیا سەیڤکرنا ژمارێ -->
                     <button id="btnExportVCF" class="mini-action-btn" style="display:none; background:var(--theme-dark); color:#fff; border-color:var(--theme-dark);" data-i18n="btnSaveContact">💾 سەیڤکرن (Contacts)</button>
                 </div>
             </div>
@@ -157,18 +162,19 @@
         </footer>
     </div>
 
-    <!-- مۆدێلا مێنیویا سەرەکی (پەردەیا لایێ چەپێ) -->
+    <!-- مۆدێلا مێنیویا سەرەکی (لایێ چەپێ) -->
     <div class="menu-overlay" id="mainMenuOverlay"></div>
     <div class="side-menu-panel" id="sideMenuPanel">
-        <div class="menu-header-banner">
-            <div class="menu-logo-circle">
-                <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            </div>
-            <h3 data-i18n="menuTitle">مێنیو</h3>
-            <p>Contact Finder v1.2</p>
+        <!-- دەمژمێر و سەقفێ مێنیویێ -->
+        <div class="clock-widget">
             <button id="btnCloseMainMenu" class="close-menu-btn">✖</button>
+            <div class="menu-clock-container">
+                <div id="menuClockTime" class="clock-time">00:00:00</div>
+                <div id="menuClockDate" class="clock-date">شەمبی، 1 کانوونا دووێ 2024</div>
+            </div>
         </div>
 
+        <!-- ئۆپشنێن مێنیویێ -->
         <div class="side-menu-items">
             <button class="menu-list-btn" id="btnDarkMode">
                 <div class="menu-icon">🌙</div>
@@ -237,7 +243,7 @@
             <p><span data-i18n="modalQRType">جۆر:</span> <span style="color:var(--theme-main); font-weight:bold;">URL</span></p>
             <div class="qr-data-box" id="qrData"></div>
             <div class="qr-modal-actions">
-                <button id="btnCopyQr" class="modal-btn" data-i18n="btnCopy">کۆپی کرن</button>
+                <button id="btnCopyQr" class="modal-btn" data-i18n="btnCopy">کۆپیکرن</button>
                 <button id="btnOpenQr" class="modal-btn main-btn" data-i18n="btnOpen">ڤەکرن</button>
                 <button id="btnCloseQr" class="modal-btn cancel-btn" data-i18n="btnClose">گرتن</button>
             </div>
@@ -248,9 +254,7 @@
     <div class="modal-overlay" id="historyModal">
         <div class="qr-modal-content" style="max-height: 85vh; overflow-y: auto; padding-bottom: 20px;">
             <h3 data-i18n="historyTitle">🕒 تۆمارا پێشینە</h3>
-            
             <div id="historyListContainer" class="history-list" style="margin-bottom: 15px;"></div>
-            
             <div style="display: flex; gap: 10px;">
                 <button id="btnClearHistory" class="modal-btn" style="background:#ff4757; color:#fff; flex: 1;" data-i18n="btnClearHistory">🗑️ پاقژکرن</button>
                 <button id="btnCloseHistory" class="modal-btn cancel-btn" style="flex: 1;" data-i18n="btnClose">گرتن</button>
@@ -261,10 +265,10 @@
     <!-- مۆدێلا کۆتێ من -->
     <div class="modal-overlay" id="myQRModal">
         <div class="qr-modal-content">
-            <h3 data-i18n="myQRTitle">🪪 پرۆفایل و کارتا من</h3>
+            <h3 data-i18n="myQRTitle">🪪 پرۆفایل و کۆتێ من</h3>
             <p style="font-size:12px;" data-i18n="myQRDesc">لینک یان ژمارا خۆ بنڤیسە بۆ دروستکرنا QR</p>
             <div class="input-box" style="margin-bottom:15px; padding: 0 10px;">
-                <input type="text" id="myQRInput" placeholder="لینکێ لڤێرێ بدانە و بکە QR Code" style="width:100%; border:none; height:45px; background:transparent; outline:none; font-weight:700; direction:ltr; text-align:center;">
+                <input type="text" id="myQRInput" placeholder="instagram.com/bizhar" style="width:100%; border:none; height:45px; background:transparent; outline:none; font-weight:700; direction:ltr; text-align:center;">
             </div>
             <button id="btnGenerateMyQR" class="modal-btn main-btn" style="width:100%; margin-bottom:15px;" data-i18n="btnGenerateQR">دروستکرنا QR</button>
             <div id="myQRResultBox" style="display:none; text-align:center;">
