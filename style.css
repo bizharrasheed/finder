@@ -27,33 +27,39 @@ body.dark-mode {
 
 * { box-sizing: border-box; font-family: 'Noto Kufi Arabic', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
 
-/* سەنتەرکرن و فۆل سکرین */
+/* دیزاینی فۆل سکرین و ڕێگری لە جووڵەی نەخوازراو */
 html, body {
-    margin: 0; padding: 0; min-height: 100vh;
-    background-color: var(--bg-color);
+    margin: 0; padding: 0; 
+    width: 100%; height: 100%; height: 100dvh;
+    overflow: hidden; /* ڕێگری لە Scrollی ئەسڵی پەڕەکە */
+    background-color: var(--bg-color); 
     background-image: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-color) 100%);
-    transition: all 0.5s ease; text-rendering: optimizeLegibility; 
+    transition: all 0.5s ease; text-rendering: optimizeLegibility;
 }
 
 body {
     display: flex; justify-content: center; align-items: flex-start;
 }
 
+/* سەنتەرکردنی بەرنامەکە و شێوەی ئەپڵیکەیشن */
 .app-container { 
-    width: 100%; max-width: 480px; min-height: 100vh;
+    width: 100%; max-width: 480px; height: 100%;
+    margin: 0 auto;
+    display: flex; flex-direction: column;
     background-image: linear-gradient(135deg, var(--bg-color) 0%, var(--card-bg) 100%);
-    position: relative; z-index: 10; display: flex; flex-direction: column;
-    box-shadow: 0 0 30px rgba(0,0,0,0.08); /* سێبەری جوان بۆ لاپتۆپ و تابلێت */
+    box-shadow: 0 0 30px rgba(0,0,0,0.08); /* سێبەر بۆ لاپتۆپ و تابلێت */
+    position: relative; z-index: 10; 
 }
 
-/* هێدەری جێگیر (Sticky Nav) */
+/* بەشی سەرەوەی جێگیر (هێدەر و ئایکۆنەکان) */
 .top-nav-fixed {
-    position: sticky; top: 0; z-index: 100;
+    flex-shrink: 0; width: 100%; z-index: 100;
 }
 
 .app-header {
     background: linear-gradient(135deg, var(--theme-dark) 0%, var(--theme-main) 100%);
-    padding: max(25px, env(safe-area-inset-top)) 20px 45px 20px; 
+    /* پاڵپشتی بۆ Notch ی ئایفۆن و ئەندرۆید (Safe Area) */
+    padding: calc(20px + env(safe-area-inset-top, 20px)) 20px 45px 20px; 
     display: grid; grid-template-columns: 50px 1fr 50px; align-items: center;
     border-bottom-left-radius: 35px; border-bottom-right-radius: 35px; box-shadow: 0 10px 20px var(--theme-shadow);
     transition: all 0.5s ease;
@@ -75,7 +81,7 @@ body {
 
 /* لیستی پلاتفۆرمەکان */
 .platforms-wrapper-outer {
-    padding: 0 20px; margin-top: -30px; position: relative; z-index: 20; padding-bottom: 15px; 
+    padding: 0 20px; margin-top: -30px; position: relative; z-index: 20; padding-bottom: 10px;
 }
 .platforms-wrapper {
     background: var(--card-bg); border-radius: 40px; padding: 8px; margin-bottom: 0;
@@ -93,7 +99,13 @@ body {
 .platform-btn.active { background: var(--theme-main); box-shadow: 0 0 0 3px var(--card-bg), 0 0 0 6px var(--theme-light), 0 10px 20px var(--theme-shadow); }
 .platform-btn.active svg { fill: #ffffff; }
 
-.content-wrapper { padding: 5px 20px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+/* ناوچەی سکڕۆڵ (جووڵەی خوارەوە بێ جووڵانی هێدەر) */
+.scroll-area {
+    flex: 1; width: 100%; overflow-y: auto; overflow-x: hidden;
+    scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+.content-wrapper { padding: 5px 20px 20px 20px; display: flex; flex-direction: column; min-height: 100%; }
 
 /* Hero Section */
 .hero-section { text-align: center; margin-bottom: 20px; }
@@ -169,12 +181,12 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 .app-footer a:hover { transform: scale(1.05); opacity: 0.8; }
 .app-footer strong { font-weight: 900; margin-right: 4px; }
 
-/* چارەسەرکرنا کێشەیا وشەیا "پەیام" ل تەنیشتێ */
+/* چارەسەری بڕانی نۆتیفیکەیشن (Toast Center Fix) */
 .toast {
     position: fixed; top: -100px; left: 0; right: 0; margin: 0 auto;
     width: fit-content; max-width: 90%; z-index: 9999;
 }
-.toast.show { top: max(25px, env(safe-area-inset-top)); }
+.toast.show { top: max(25px, env(safe-area-inset-top, 25px)); }
 
 /* General Modals */
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: center; z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
@@ -190,7 +202,7 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 .modal-btn.main-btn { background: var(--theme-main); color: #fff; }
 .modal-btn.cancel-btn { background: var(--input-bg); color: var(--text-dark); border: 1px solid var(--border-color); }
 
-/* ==== Side Drawer Menu (مێنیویا لایێ چەپێ دگەل دەمژمێرێ) ==== */
+/* ==== Side Drawer Menu ==== */
 .menu-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
@@ -212,7 +224,7 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 
 .clock-widget {
     background: linear-gradient(135deg, var(--theme-dark) 0%, var(--theme-main) 100%);
-    padding: max(40px, env(safe-area-inset-top)) 20px 30px 20px;
+    padding: calc(30px + env(safe-area-inset-top, 25px)) 20px 30px 20px;
     color: #ffffff; text-align: center; position: relative;
     border-bottom-right-radius: 40px; box-shadow: 0 10px 25px var(--theme-shadow);
 }
@@ -226,7 +238,7 @@ p { color: var(--text-gray); font-size: 14px; margin: 0 0 15px 0; font-weight: 7
 .clock-date { font-size: 13px; font-weight: 700; opacity: 0.9; }
 
 .close-menu-btn {
-    position: absolute; top: max(15px, env(safe-area-inset-top)); right: 15px;
+    position: absolute; top: calc(15px + env(safe-area-inset-top, 15px)); right: 15px;
     background: rgba(255,255,255,0.2); border: none; color: white;
     width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
     display: flex; justify-content: center; align-items: center; font-size: 14px; transition: 0.3s;
