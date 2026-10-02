@@ -2,11 +2,12 @@
 const i18n = {
     brandSub: { bd: "لێگەڕیان ب ساناھی", ckb: "گەڕان بە ئاسانی", ar: "بحث سهل وسريع", fa: "جستجوی آسان و سریع", tr: "Hızlı ve Kolay Arama", en: "Find Anyone • Fast & Easy" },
     badge: { bd: "بلەز • بهێز • بێبەرامبەر", ckb: "بەخێرایی • بەهێز • بێبەرامبەر", ar: "سريع • قوي • مجاني", fa: "سریع • قدرتمند • رایگان", tr: "Hızlı • Güçlü • Ücretsiz", en: "Fast • Powerful • Free" },
-    searchCountry: { bd: " ناڤێ وەڵاتی بنڤیسە بو لێگەریانێ...", ckb: "گەڕان بۆ وڵات...", ar: "بحث عن دولة...", fa: "جستجوی کشور...", tr: "Ülke ara...", en: "Search country..." },
-    btnHistory: { bd: "🕒 لێگەریانێن کەڤن", ckb: "🕒 پێشینە", ar: "🕒 السجل", fa: "🕒 تاریخچه", tr: "🕒 Geçmiş", en: "🕒 History" },
+    searchCountry: { bd: "گەڕان بۆ وڵات...", ckb: "گەڕان بۆ وڵات...", ar: "بحث عن دولة...", fa: "جستجوی کشور...", tr: "Ülke ara...", en: "Search country..." },
+    phonePlaceholder: { bd: "ژمارە یان یوزەرنەیم...", ckb: "ژمارە یان یوزەرنەیم...", ar: "رقم أو اسم المستخدم...", fa: "شماره یا نام کاربری...", tr: "Numara veya kullanıcı adı...", en: "Number or username..." },
+    btnHistory: { bd: "🕒 لەگەریانێن کەڤن", ckb: "🕒 پێشینە", ar: "🕒 السجل", fa: "🕒 تاریخچه", tr: "🕒 Geçmiş", en: "🕒 History" },
     btnMyQR: { bd: "🪪 کارتا من", ckb: "🪪 کارتی من", ar: "🪪 بطاقتي", fa: "🪪 کارت من", tr: "🪪 Kartım", en: "🪪 My Card" },
     btnSaveContact: { bd: "💾 سەیڤکرن (Contacts)", ckb: "💾 سەیڤکردن (Contacts)", ar: "💾 حفظ الرقم", fa: "💾 ذخیره مخاطب", tr: "💾 Kişiyi Kaydet", en: "💾 Save Contact" },
-    f1: { bd: "پشتڕاستی", ckb: "دڵنیایی", ar: "أمان", fa: "امنیت", tr: "Güvenlik", en: "Secure" },
+    f1: { bd: "پشتراستی", ckb: "دڵنیایی", ar: "أمان", fa: "امنیت", tr: "Güvenlik", en: "Secure" },
     f2: { bd: "سۆشیال میدیا", ckb: "سۆشیال میدیا", ar: "تواصل اجتماعي", fa: "شبکه اجتماعی", tr: "Sosyal Medya", en: "Social Media" },
     f3: { bd: "پاراستن", ckb: "پاراستن", ar: "خصوصية", fa: "حریم خصوصی", tr: "Gizlilik", en: "Privacy" },
     f4: { bd: "لەزاتی", ckb: "خێرایی", ar: "سرعة", fa: "سرعت", tr: "Hız", en: "Speed" },
@@ -28,7 +29,7 @@ const i18n = {
     btnOpen: { bd: "ڤەکرن", ckb: "کردنەوە", ar: "فتح", fa: "باز کردن", tr: "Aç", en: "Open" },
     btnClose: { bd: "گرتن", ckb: "داخستن", ar: "إغلاق", fa: "بستن", tr: "Kapat", en: "Close" },
     
-    historyTitle: { bd: "🕒 تۆمارا لێگەریانێن کەڤن", ckb: "🕒 تۆماری پێشینە", ar: "🕒 سجل البحث", fa: "🕒 تاریخچه جستجو", tr: "🕒 Arama Geçmişi", en: "🕒 History" },
+    historyTitle: { bd: "🕒 لیستا لیگەریانێن کەڤن", ckb: "🕒 تۆماری پێشینە", ar: "🕒 سجل البحث", fa: "🕒 تاریخچه جستجو", tr: "🕒 Arama Geçmişi", en: "🕒 History" },
     btnClearHistory: { bd: "🗑️ پاقژکرن", ckb: "🗑️ سڕینەوەی هەمووی", ar: "🗑️ مسح الكل", fa: "🗑️ پاک کردن همه", tr: "🗑️ Tümünü Temizle", en: "🗑️ Clear All" },
     emptyHistory: { bd: "هیچ تۆمارەک نینە", ckb: "هیچ تۆمارێک نییە", ar: "لا يوجد سجل", fa: "هیچ تاریخچه ای نیست", tr: "Geçmiş yok", en: "No history found" },
     historyNotePlaceholder: { bd: "تێبینی...", ckb: "تێبینی...", ar: "ملاحظة...", fa: "یادداشت...", tr: "Not...", en: "Note..." },
@@ -38,7 +39,7 @@ const i18n = {
     btnGenerateQR: { bd: "دروستکرنا QR", ckb: "دروستکردنی QR", ar: "إنشاء QR", fa: "ایجاد QR", tr: "QR Oluştur", en: "Generate QR" },
     
     process: { bd: "پرۆسێسکرن...", ckb: "پرۆسێسکردن...", ar: "جاري المعالجة...", fa: "در حال پردازش...", tr: "İşleniyor...", en: "Processing..." },
-    errPhone: { bd: "ژمارە کورتە یان خەلەتە!", ckb: "ژمارەکە کورتە یان هەڵەیە!", ar: "الرقم قصير أو غير صحيح!", fa: "شماره کوتاه یا اشتباه است!", tr: "Numara kısa veya yanlış!", en: "Invalid or short number!" },
+    errPhone: { bd: "پێزانین کورتن یان خەلەتن!", ckb: "زانیارییەکان کورتن یان هەڵەن!", ar: "المعلومات قصيرة أو خاطئة!", fa: "اطلاعات کوتاه یا اشتباه است!", tr: "Bilgiler kısa veya yanlış!", en: "Input is invalid or short!" },
     errEmpty: { bd: "پێزانینان بنڤیسە!", ckb: "زانیاری بنووسە!", ar: "أدخل المعلومات!", fa: "اطلاعات را وارد کنید!", tr: "Bilgileri girin!", en: "Enter details!" },
     msgCopied: { bd: "هاتە کۆپیکرن!", ckb: "کۆپی کرا!", ar: "تم النسخ!", fa: "کپی شد!", tr: "Kopyalandı!", en: "Copied!" },
     msgNoteSaved: { bd: "تێبینی هاتە سەیڤکرن", ckb: "تێبینی سەیڤ کرا", ar: "تم حفظ الملاحظة", fa: "یادداشت ذخیره شد", tr: "Not kaydedildi", en: "Note saved" },
@@ -46,7 +47,25 @@ const i18n = {
     errNoQR: { bd: "چ QR Code نەهاتە دیتن!", ckb: "هیچ QR Code نەدۆزرایەوە!", ar: "لم يتم العثور على رمز QR!", fa: "هیچ کد QR یافت نشد!", tr: "QR Kodu bulunamadı!", en: "No QR Code found!" }
 };
 
-// 10 Beautiful Themes Data
+// Date & Time formatting tables
+const daysMap = {
+    bd: ["ئێک شەمبی", "دوو شەمبی", "سێ شەمبی", "چوار شەمبی", "پێنج شەمبی", "ئینی", "شەمبی"],
+    ckb: ["یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "هەینی", "شەممە"],
+    ar: ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
+    fa: ["یکشنبه", "دوشنبه", "سه‌شنبه", "چهارشنبه", "پنج‌شنبه", "جمعه", "شنبه"],
+    tr: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
+    en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+};
+const monthsMap = {
+    bd: ["کانوونا دووێ", "شوبات", "ئادار", "نیسان", "گولان", "حەزیران", "تیرمەهـ", "تەباخ", "ئەیلوول", "چرییا ئێکێ", "چرییا دووێ", "کانوونا ئێکێ"],
+    ckb: ["کانوونی دووەم", "شوبات", "ئادار", "نیسان", "ئایار", "حوزەیران", "تەممووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانوونی یەکەم"],
+    ar: ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+    fa: ["ژانویه", "فوریه", "مارس", "آوریل", "مه", "ژوئن", "ژوئیه", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"],
+    tr: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+    en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+};
+
+// Themes
 const appThemes = {
     default: { id: "default", name: {bd:"ڕەنگێ بنەڕەتی", ckb:"ڕەنگی بنەڕەتی", ar:"اللون الافتراضي", fa:"رنگ پیش‌فرض", tr:"Varsayılan", en:"Default Colors"} },
     emerald: { id: "emerald", main: "#10b981", dark: "#059669", name: {bd:"سەوزێ سروشتی", ckb:"سەوزی سروشتی", ar:"أخضر زمردي", fa:"سبز زمردی", tr:"Zümrüt Yeşili", en:"Emerald Green"} },
@@ -64,7 +83,7 @@ const appThemes = {
 const platformsData = {
     whatsapp: { id: "whatsapp", type: "phone", baseUrl: "https://wa.me/", colors: { main: "#00b15c", dark: "#027a56", light: "rgba(0,177,92,0.15)", shadow: "rgba(0,177,92,0.4)" }, svg: '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>',
         name: { bd:"واتسئاپ", ckb:"واتسئاپ", ar:"واتساب", fa:"واتس‌اپ", tr:"WhatsApp", en:"WhatsApp" },
-        desc: { bd:"ژمارێ بنڤیسە بێی سەیڤکرن، ڕاستەوخۆ دێ چات ڤەبیت.", ckb:"ژمارەکە بنووسە بێ سەیڤکردن، ڕاستەوخۆ چات دەکرێتەوە.", ar:"أدخل الرقم بدون حفظ، سيتم فتح الدردشة مباشرة.", fa:"شماره را بدون ذخیره وارد کنید، چت مستقیم باز می شود.", tr:"Kaydetmeden numarayı girin, sohbet doğrudan açılır.", en:"Enter number without saving, chat opens directly." },
+        desc: { bd:"ژمارێ یان یوزەرنەیمی بنڤیسە، ڕاستەوخۆ دێ چات ڤەبیت.", ckb:"ژمارە یان یوزەرنەیم بنووسە، ڕاستەوخۆ چات دەکرێتەوە.", ar:"أدخل الرقم أو اسم المستخدم لفتح الدردشة مباشرة.", fa:"شماره یا نام کاربری را وارد کنید تا چت باز شود.", tr:"Sohbeti açmak için numara veya kullanıcı adını girin.", en:"Enter number or username to chat directly." },
         btnText: { bd:"ڤەکرنا چاتێ واتسئاپی", ckb:"کردنەوەی چاتی واتسئاپ", ar:"فتح دردشة واتساب", fa:"باز کردن چت واتس‌اپ", tr:"WhatsApp Sohbetini Aç", en:"Open WhatsApp Chat" }
     },
     facebook: { id: "facebook", type: "text", baseUrl: "https://www.facebook.com/", colors: { main: "#1877F2", dark: "#105cb8", light: "rgba(24,119,242,0.15)", shadow: "rgba(24,119,242,0.4)" }, svg: '<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>',
@@ -79,7 +98,7 @@ const platformsData = {
     },
     viber: { id: "viber", type: "phone", baseUrl: "viber://add?number=", colors: { main: "#7360f2", dark: "#5c4cd9", light: "rgba(115,96,242,0.15)", shadow: "rgba(115,96,242,0.4)" }, svg: '<path d="M21.5 15.2c-.9-1.2-2.4-1.5-3.4-.4l-1.5 1.1c-1.5-1.2-4.1-3.7-5.1-5.1l1.1-1.5c1.1-1 .9-2.5-.4-3.4C10.8 4.6 9.6 3.5 8.3 2.5c-1.2-1-2.6-.7-3.4.4l-1.7 2C2.1 6 1.7 7.7 2 9.4c1 4.8 4.2 9.8 8.5 12.5 2.2 1.3 4.7 1.9 7.1 1.4 1.6-.3 3-1.3 3.9-2.6l2-1.7c1-1.1 1.2-2.6 0-3.8-1-1.3-2.1-2.5-2.2-2.5z"/>',
         name: { bd:"ڤایبەر", ckb:"ڤایبەر", ar:"فايبر", fa:"وایبر", tr:"Viber", en:"Viber" },
-        desc: { bd:"ژمارێ بنڤیسە بۆ زێدەکرنێ.", ckb:"ژمارەکە بنووسە بۆ زیادکردن.", ar:"أدخل الرقم للإضافة.", fa:"شماره را برای افزودن وارد کنید.", tr:"Eklemek için numarayı girin.", en:"Enter number to add." },
+        desc: { bd:"ژمارێ یان یوزەرنەیمی بنڤیسە بۆ پەیوەندیێ.", ckb:"ژمارە یان یوزەرنەیم بنووسە بۆ زیادکردن.", ar:"أدخل الرقم أو اسم المستخدم للإضافة.", fa:"شماره یا نام کاربری را برای افزودن وارد کنید.", tr:"Eklemek için numara veya kullanıcı adını girin.", en:"Enter number or username to add." },
         btnText: { bd:"ڤەکرنا چاتێ ڤایبەری", ckb:"کردنەوەی چاتی ڤایبەر", ar:"فتح فايبر", fa:"باز کردن وایبر", tr:"Viber'i Aç", en:"Open Viber" }
     },
     telegram: { id: "telegram", type: "text", baseUrl: "https://t.me/", colors: { main: "#0088cc", dark: "#006699", light: "rgba(0,136,204,0.15)", shadow: "rgba(0,136,204,0.4)" }, svg: '<path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 7.85l-1.95 9.17c-.15.65-.54.82-1.09.51l-3-2.21-1.45 1.4c-.16.16-.3.3-.61.3l.21-3.08 5.6-5.06c.25-.22-.05-.34-.38-.11l-6.93 4.36-2.98-.93c-.65-.2-.66-.65.14-.96l11.64-4.49c.54-.2 1.01.12.8.1z"/>',
@@ -104,7 +123,7 @@ const platformsData = {
     },
     email: { id: "email", type: "email", baseUrl: "mailto:", colors: { main: "#EA4335", dark: "#c5221f", light: "rgba(234,67,53,0.15)", shadow: "rgba(234,67,53,0.4)" }, svg: '<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>',
         name: { bd:"ئیمێل", ckb:"ئیمەیڵ", ar:"بريد إلكتروني", fa:"ایمیل", tr:"E-posta", en:"Email" },
-        desc: { bd:"ناڤ و نیشانێ ئیمێلی بنڤیسە بۆ هنارتنا نامەیەکێ.", ckb:"ئیمەیڵ بنووسە بۆ ناردنی نامە.", ar:"أدخل البريد الإلكتروني لإرسال رسالة.", fa:"آدرس ایمیل را برای ارسال پیام وارد کنید.", tr:"Mesaj göndermek için e-posta girin.", en:"Enter email to send a message." },
+        desc: { bd:"ناونیشانێ ئیمێلی بنڤیسە بۆ ناردنا نامەیەکێ.", ckb:"ئیمەیڵ بنووسە بۆ ناردنی نامە.", ar:"أدخل البريد الإلكتروني لإرسال رسالة.", fa:"آدرس ایمیل را برای ارسال پیام وارد کنید.", tr:"Mesaj göndermek için e-posta girin.", en:"Enter email to send a message." },
         btnText: { bd:"ڤەکرنا ئێمێلی", ckb:"کردنەوەی ئیمەیڵ", ar:"إرسال بريد", fa:"ارسال ایمیل", tr:"E-posta Gönder", en:"Send Email" }
     },
     qr: { id: "qr", type: "qr", baseUrl: "", colors: { main: "#ff9000", dark: "#cc7300", light: "rgba(255,144,0,0.15)", shadow: "rgba(255,144,0,0.4)" }, svg: '<path d="M3 3v8h8V3H3zm6 6H5V5h4v4zm-6 4v8h8v-8H3zm6 6H5v-4h4v4zm4-16v8h8V3h-8zm6 6h-4V5h4v4zm-4 4h2v2h-2zm2 2h2v2h-2zm-2 2h2v2h-2zm2 2h2v2h-2zm-4-4h2v2h-2zm0 4h2v2h-2zm4-8h4v2h-4z"/>',
@@ -193,6 +212,27 @@ window.addEventListener('online', () => {
     setTimeout(() => { window.location.reload(); }, 1500);
 });
 
+// Update Clock
+function updateClock() {
+    const now = new Date();
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+    let ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12; h = h ? h : 12;
+    m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + s : s;
+    document.getElementById('menuClockTime').innerText = `${h}:${m}:${s} ${ampm}`;
+    
+    let l = (currentLang === 'bd' || currentLang === 'ckb') ? currentLang : 'en';
+    if(currentLang==='ar') l='ar'; else if(currentLang==='fa') l='fa'; else if(currentLang==='tr') l='tr';
+    let dayName = daysMap[l][now.getDay()];
+    let monthName = monthsMap[l][now.getMonth()];
+    document.getElementById('menuClockDate').innerText = `${dayName}، ${now.getDate()} ${monthName} ${now.getFullYear()}`;
+}
+setInterval(updateClock, 1000);
+updateClock();
+
 // Translations Applier
 function applyTranslations() {
     document.documentElement.dir = (currentLang === 'en' || currentLang === 'tr') ? 'ltr' : 'rtl';
@@ -220,6 +260,7 @@ function applyTranslations() {
     switchPlatform(activePlatform, null, true);
     renderCountryList(countries);
     renderThemeGrid();
+    updateClock();
 }
 
 // Setup Themes Grid
@@ -305,7 +346,6 @@ function startVoiceInput(targetInputId) {
     playClickSound(); vibrate(50); showToast("🎤...");
     r.onresult = (e) => { 
         let t = e.results[0][0].transcript.replace(/\s/g, '');
-        if(targetInputId === 'phoneInput') t = t.replace(/[^0-9]/g,'');
         document.getElementById(targetInputId).value = t; 
     };
     r.start();
@@ -379,16 +419,31 @@ function executeAction() {
     if (plat.type === "phone") {
         let code = countryCodeInput.value.trim();
         let number = phoneInput.value.trim();
-        if (code === "" || number.length < 5) {
+        if (number === "" || number.length < 3) {
             vibrate([50, 50, 50]); showToast("errPhone");
             phoneGroup.classList.remove("error"); void phoneGroup.offsetWidth; phoneGroup.classList.add("error"); phoneInput.focus(); return;
         }
-        valueToSave = "+" + code + number;
-        lastValidPhone = valueToSave;
-        if(plat.id === "whatsapp") finalUrl = `https://wa.me/${code}${number}`;
-        else finalUrl = plat.baseUrl + code + number;
-        
-        btnExportVCF.style.display = "block";
+
+        let isNumeric = /^[0-9\s]+$/.test(number);
+
+        if(isNumeric) {
+            if (code === "") { vibrate([50, 50, 50]); showToast("errPhone"); return; }
+            let cleanNum = number.replace(/\s/g, '');
+            valueToSave = "+" + code + cleanNum;
+            lastValidPhone = valueToSave;
+            if(plat.id === "whatsapp") finalUrl = `https://wa.me/${code}${cleanNum}`;
+            else finalUrl = plat.baseUrl + code + cleanNum;
+            
+            btnExportVCF.style.display = "block"; // Show Save Contact button
+        } else {
+            let cleanUser = number.replace('@', '').replace(/\s/g, '');
+            valueToSave = cleanUser;
+            lastValidPhone = ""; 
+            btnExportVCF.style.display = "none";
+            
+            if(plat.id === "whatsapp") finalUrl = `https://wa.me/${cleanUser}`;
+            else finalUrl = plat.baseUrl + cleanUser;
+        }
     } else {
         let textVal = textInput.value.trim();
         if (textVal.startsWith("@")) textVal = textVal.substring(1);
@@ -523,9 +578,23 @@ window.deleteHistoryItem = (index) => {
 window.openHistoryItem = (platId, val) => {
     switchPlatform(platId); historyModal.classList.remove('active');
     if(val.startsWith('+')) {
-        if(val.startsWith('+964')) { countryCodeInput.value = '964'; phoneInput.value = val.substring(4); }
-        else { countryCodeInput.value = ''; phoneInput.value = val; }
-    } else textInput.value = val;
+        let matched = false;
+        for (let c of countries) {
+            if (val.startsWith('+' + c.code)) {
+                countryCodeInput.value = c.code;
+                phoneInput.value = val.substring(c.code.length + 1);
+                matched = true;
+                let l = (currentLang === 'en' || currentLang === 'tr') ? c.nameEn : c.nameKu;
+                document.getElementById('selectedFlag').innerText = c.flag;
+                document.getElementById('selectedName').innerText = `(+${c.code}) ${l}`;
+                break;
+            }
+        }
+        if (!matched) { countryCodeInput.value = ''; phoneInput.value = val; }
+    } else {
+        if(platformsData[platId].type === "phone") phoneInput.value = val;
+        else textInput.value = val;
+    }
 };
 
 // Modals: My QR Profile
