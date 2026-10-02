@@ -2,7 +2,9 @@
 <html lang="ku" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <!-- ڤیۆپۆرت بۆ فۆل سکرین و پڕکرنی شاشەی مۆبایل و خۆپاراستن لە کامێرا (Notch) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -25,7 +27,7 @@
 </head>
 <body id="appBody">
 
-    <!-- سیستەمێ ئاگەهدارکرنێ (Toast) - چارەسەرکرا -->
+    <!-- سیستەمێ ئاگەهدارکرنێ (Toast) چارەسەرکرا -->
     <div id="toastNotification" class="toast">
         <span id="toastMessage">پەیام</span>
     </div>
@@ -35,7 +37,7 @@
 
     <div class="app-container">
         
-        <!-- بەشێ سەرەوە یێ جێگیر (Sticky Top Bar) -->
+        <!-- بەشێ سەرەوە یێ جێگیر (Fixed Nav) -->
         <div class="top-nav-fixed">
             <!-- هێدەرێ سەری -->
             <header class="app-header">
@@ -59,107 +61,108 @@
             </div>
         </div>
 
-        <!-- بەشێ خوارەوە کو لڤلڤینێ دکەت (Scrollable Area) -->
-        <div class="content-wrapper">
-            <!-- لۆگۆیا سەرەکی -->
-            <div class="hero-section">
-                <div class="logo-container">
-                    <div class="logo-glow" id="logoGlow"></div>
-                    <div class="logo-circle" id="mainLogoCircle">
-                        <div class="bubbles-container" id="bubblesContainer"></div>
-                        <div id="mainIconContainer"></div>
+        <!-- بەشێ خوارەوە کو لڤلڤینێ دکەت (Scroll Area) -->
+        <div class="scroll-area" id="mainScrollArea">
+            <div class="content-wrapper">
+                <!-- لۆگۆیا سەرەکی -->
+                <div class="hero-section">
+                    <div class="logo-container">
+                        <div class="logo-glow" id="logoGlow"></div>
+                        <div class="logo-circle" id="mainLogoCircle">
+                            <div class="bubbles-container" id="bubblesContainer"></div>
+                            <div id="mainIconContainer"></div>
+                        </div>
                     </div>
-                </div>
 
-                <h1 id="mainTitle">واتسئاپ</h1>
-                <p id="mainDesc">ژمارێ یان یوزەرنەیمی بنڤیسە، ڕاستەوخۆ دێ چات ڤەبیت.</p>
-                
-                <div class="feature-badge" id="txtBadge" data-i18n="badge">
-                    بەخێرایی • بەهێز • بێبەرامبەر
-                </div>
-            </div>
-            
-            <!-- کارتا فۆرمێ -->
-            <div class="main-action-card">
-                <div class="form-container">
+                    <h1 id="mainTitle">واتسئاپ</h1>
+                    <p id="mainDesc">ژمارێ یان یوزەرنەیمی بنڤیسە، ڕاستەوخۆ دێ چات ڤەبیت.</p>
                     
-                    <!-- بەشێ مۆبایلێ و وەلاتی -->
-                    <div id="phoneInputSection">
-                        <div class="custom-select-wrapper" id="customSelectWrapper">
-                            <div class="custom-select-btn" id="countrySelectBtn">
-                                <div class="selected-country-info">
-                                    <span id="selectedFlag">🇮🇶</span>
-                                    <span id="selectedName">(+964) عێراق - Iraq</span>
-                                </div>
-                                <span style="color:#9ca3af; font-size:12px;">▼</span>
-                            </div>
-                            <div class="custom-select-dropdown" id="countryDropdown">
-                                <div class="search-box">
-                                    <input type="text" id="countrySearch" data-i18n-placeholder="searchCountry" placeholder="گەڕان بۆ وڵات..." autocomplete="off">
-                                </div>
-                                <ul class="country-list" id="countryList"></ul>
-                            </div>
-                        </div>
-
-                        <div class="row phone-input-row">
-                            <div class="input-box code-box" dir="ltr">
-                                <span class="plus-sign" id="plusSign">+</span>
-                                <input type="tel" id="countryCodeInput" placeholder="964" value="964">
-                            </div>
-                            <div class="input-box phone-box" dir="ltr" id="phoneGroup">
-                                <input type="text" id="phoneInput" data-i18n-placeholder="phonePlaceholder" placeholder="ژمارە یان یوزەرنەیم..." autocomplete="off">
-                                <button class="mic-btn" id="btnMicPhone" title="دەنگ">🎤</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- بەشێ یوزەرنەیم -->
-                    <div id="textInputSection" style="display: none;">
-                        <div class="row">
-                            <div class="input-box phone-box" dir="ltr" id="textGroup">
-                                <input type="text" id="textInput" placeholder="username" autocomplete="off">
-                                <button class="mic-btn" id="btnMicText" title="دەنگ">🎤</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- بەشێ QR Code Scanner -->
-                    <div id="qrInputSection" style="display: none;">
-                        <input type="file" id="qrFileInput" accept="image/*" style="display: none;">
+                    <div class="feature-badge" id="txtBadge" data-i18n="badge">
+                        بەخێرایی • بەهێز • بێبەرامبەر
                     </div>
                 </div>
                 
-                <!-- دوگمەیا سەرەکی -->
-                <button class="btn-submit" id="submitBtn">
-                    <span id="btnText" style="flex:1;">ڤەکرنا چاتێ واتسئاپی</span>
-                    <div id="btnIconWrapper">➜</div>
-                </button>
+                <!-- کارتا فۆرمێ -->
+                <div class="main-action-card">
+                    <div class="form-container">
+                        
+                        <!-- بەشێ مۆبایلێ و وەلاتی -->
+                        <div id="phoneInputSection">
+                            <div class="custom-select-wrapper" id="customSelectWrapper">
+                                <div class="custom-select-btn" id="countrySelectBtn">
+                                    <div class="selected-country-info">
+                                        <span id="selectedFlag">🇮🇶</span>
+                                        <span id="selectedName">(+964) عێراق - Iraq</span>
+                                    </div>
+                                    <span style="color:#9ca3af; font-size:12px;">▼</span>
+                                </div>
+                                <div class="custom-select-dropdown" id="countryDropdown">
+                                    <div class="search-box">
+                                        <input type="text" id="countrySearch" data-i18n-placeholder="searchCountry" placeholder="گەڕان بۆ وڵات..." autocomplete="off">
+                                    </div>
+                                    <ul class="country-list" id="countryList"></ul>
+                                </div>
+                            </div>
 
-                <!-- دوگمەیێن زێدە -->
-                <div class="action-buttons-group">
-                    <button id="btnOpenHistory" class="mini-action-btn" data-i18n="btnHistory">🕒 پێشینە</button>
-                    <button id="btnOpenMyQR" class="mini-action-btn" data-i18n="btnMyQR">🪪 کۆتێ من</button>
-                    <!-- دوگمەیا سەیڤکرنا ژمارێ -->
-                    <button id="btnExportVCF" class="mini-action-btn" style="display:none; background:var(--theme-dark); color:#fff; border-color:var(--theme-dark);" data-i18n="btnSaveContact">💾 سەیڤکرن (Contacts)</button>
+                            <div class="row phone-input-row">
+                                <div class="input-box code-box" dir="ltr">
+                                    <span class="plus-sign" id="plusSign">+</span>
+                                    <input type="tel" id="countryCodeInput" placeholder="964" value="964">
+                                </div>
+                                <div class="input-box phone-box" dir="ltr" id="phoneGroup">
+                                    <input type="text" id="phoneInput" data-i18n-placeholder="phonePlaceholder" placeholder="ژمارە یان یوزەرنەیم..." autocomplete="off">
+                                    <button class="mic-btn" id="btnMicPhone" title="دەنگ">🎤</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- بەشێ یوزەرنەیم -->
+                        <div id="textInputSection" style="display: none;">
+                            <div class="row">
+                                <div class="input-box phone-box" dir="ltr" id="textGroup">
+                                    <input type="text" id="textInput" placeholder="username" autocomplete="off">
+                                    <button class="mic-btn" id="btnMicText" title="دەنگ">🎤</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- بەشێ QR Code Scanner -->
+                        <div id="qrInputSection" style="display: none;">
+                            <input type="file" id="qrFileInput" accept="image/*" style="display: none;">
+                        </div>
+                    </div>
+                    
+                    <!-- دوگمەیا سەرەکی -->
+                    <button class="btn-submit" id="submitBtn">
+                        <span id="btnText" style="flex:1;">ڤەکرنا چاتێ واتسئاپی</span>
+                        <div id="btnIconWrapper">➜</div>
+                    </button>
+
+                    <!-- دوگمەیێن زێدە -->
+                    <div class="action-buttons-group">
+                        <button id="btnOpenHistory" class="mini-action-btn" data-i18n="btnHistory">🕒 پێشینە</button>
+                        <button id="btnOpenMyQR" class="mini-action-btn" data-i18n="btnMyQR">🪪 کۆتێ من</button>
+                        <button id="btnExportVCF" class="mini-action-btn" style="display:none; background:var(--theme-dark); color:#fff; border-color:var(--theme-dark);" data-i18n="btnSaveContact">💾 سەیڤکرن (Contacts)</button>
+                    </div>
+                </div>
+
+                <!-- تایبەتمەندیێن خوارێ -->
+                <div class="app-features">
+                    <div class="feature-item"><span style="font-size:20px;">🛡</span><span id="txtF1" data-i18n="f1">دڵنیایی</span></div>
+                    <div class="feature-item"><span style="font-size:20px;">🌐</span><span id="txtF2" data-i18n="f2">سۆشیال میدیا</span></div>
+                    <div class="feature-item"><span style="font-size:20px;">🔒</span><span id="txtF3" data-i18n="f3">داپاراستن</span></div>
+                    <div class="feature-item"><span style="font-size:20px;">⚡</span><span id="txtF4" data-i18n="f4">خێرایی</span></div>
                 </div>
             </div>
 
-            <!-- تایبەتمەندیێن خوارێ -->
-            <div class="app-features">
-                <div class="feature-item"><span style="font-size:20px;">🛡</span><span id="txtF1" data-i18n="f1">دڵنیایی</span></div>
-                <div class="feature-item"><span style="font-size:20px;">🌐</span><span id="txtF2" data-i18n="f2">سۆشیال میدیا</span></div>
-                <div class="feature-item"><span style="font-size:20px;">🔒</span><span id="txtF3" data-i18n="f3">داپاراستن</span></div>
-                <div class="feature-item"><span style="font-size:20px;">⚡</span><span id="txtF4" data-i18n="f4">خێرایی</span></div>
-            </div>
+            <!-- فوتەر -->
+            <footer class="app-footer">
+                <span>&lt;/&gt;</span> Developed by: 
+                <a href="https://bizhar-cloud.github.io/BizharRasheed/" target="_blank">
+                    <strong>Bizhar Rasheed</strong>
+                </a>
+            </footer>
         </div>
-
-        <!-- فوتەر -->
-        <footer class="app-footer">
-            <span>&lt;/&gt;</span> Developed by: 
-            <a href="https://bizhar-cloud.github.io/BizharRasheed/" target="_blank">
-                <strong>Bizhar Rasheed</strong>
-            </a>
-        </footer>
     </div>
 
     <!-- مۆدێلا مێنیویا سەرەکی (لایێ چەپێ) -->
@@ -174,7 +177,6 @@
             </div>
         </div>
 
-        <!-- ئۆپشنێن مێنیویێ -->
         <div class="side-menu-items">
             <button class="menu-list-btn" id="btnDarkMode">
                 <div class="menu-icon">🌙</div>
@@ -213,9 +215,7 @@
     <div class="modal-overlay" id="themeModal">
         <div class="qr-modal-content">
             <h3 data-i18n="themeTitle">🎨 ڕەنگێ پرۆگرامی</h3>
-            <div class="theme-grid" id="themeGrid">
-                <!-- ب ڕێیا جاڤاسکریپتێ دێ پڕ بیت -->
-            </div>
+            <div class="theme-grid" id="themeGrid"></div>
             <button id="btnCloseThemes" class="modal-btn cancel-btn" style="width:100%; margin-top:15px;" data-i18n="btnClose">گرتن</button>
         </div>
     </div>
@@ -243,7 +243,7 @@
             <p><span data-i18n="modalQRType">جۆر:</span> <span style="color:var(--theme-main); font-weight:bold;">URL</span></p>
             <div class="qr-data-box" id="qrData"></div>
             <div class="qr-modal-actions">
-                <button id="btnCopyQr" class="modal-btn" data-i18n="btnCopy">کۆپیکرن</button>
+                <button id="btnCopyQr" class="modal-btn" data-i18n="btnCopy">کۆپی کرن</button>
                 <button id="btnOpenQr" class="modal-btn main-btn" data-i18n="btnOpen">ڤەکرن</button>
                 <button id="btnCloseQr" class="modal-btn cancel-btn" data-i18n="btnClose">گرتن</button>
             </div>
